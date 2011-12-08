@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Source:</b>
+  <%= @mention.source_id %>
+</p>
+
+<p>
+  <b>Source type:</b>
+  <%= @mention.source_type %>
+</p>
+
+<p>
+  <b>Author:</b>
+  <%= @mention.author_id %>
+</p>
+
+<p>
+  <b>Text:</b>
+  <%= @mention.text %>
+</p>
+
+<p>
+  <b>Url:</b>
+  <%= @mention.url %>
+</p>
+
+<p>
+  <b>Rating:</b>
+  <%= @mention.rating %>
+</p>
+
+<p>
+  <b>Sentiment:</b>
+  <%= @mention.sentiment %>
+</p>
+
+
+<%= link_to 'Edit', edit_mention_path(@mention) %> |
+<%= link_to 'Back', mentions_path %>

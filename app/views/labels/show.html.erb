@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @label.name %>
+</p>
+
+<p>
+  <b>Rdio url:</b>
+  <%= @label.rdio_url %>
+</p>
+
+
+<%= link_to 'Edit', edit_label_path(@label) %> |
+<%= link_to 'Back', labels_path %>

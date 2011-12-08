@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  source_id: 1
+  source_type: MyString
+  author_id: 1
+  text: MyText
+  url: MyString
+  rating: 9.99
+  sentiment: MyString
+
+two:
+  source_id: 1
+  source_type: MyString
+  author_id: 1
+  text: MyText
+  url: MyString
+  rating: 9.99
+  sentiment: MyString
