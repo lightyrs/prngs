@@ -6,7 +6,6 @@ class Prngs.Models.Track extends Backbone.Model
     artist_id: null
     album_id: null
     label_id: null
-    mention_id: null
     rdio_url: null
     spotify_url: null
 

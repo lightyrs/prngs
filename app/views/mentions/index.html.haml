@@ -1,0 +1,31 @@
+%h1 Listing mentions
+%table
+  %tr
+    %th Source
+    %th Author
+    %th Track
+    %th Album
+    %th Text
+    %th Url
+    %th Rating
+    %th Sentiment
+    %th
+    %th
+    %th
+  - @mentions.each do |mention|
+    %tr
+      %td= mention.source_id
+      %td= mention.author_id
+      %td= mention.track_id
+      %td= mention.album_id
+      %td= mention.text
+      %td= mention.url
+      %td= mention.rating
+      %td= mention.sentiment
+      %td= link_to 'Show', mention
+      %td= link_to 'Edit', edit_mention_path(mention)
+      %td= link_to 'Destroy', mention, confirm: 'Are you sure?', method: :delete
+%br/
+= link_to 'New Mention', new_mention_path
+
+= javascript_tag backbone_router("mentions", @mentions)

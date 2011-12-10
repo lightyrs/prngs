@@ -1,0 +1,19 @@
+%h1 Listing labels
+%table
+  %tr
+    %th Name
+    %th Rdio url
+    %th
+    %th
+    %th
+  - @labels.each do |label|
+    %tr
+      %td= label.name
+      %td= label.rdio_url
+      %td= link_to 'Show', label
+      %td= link_to 'Edit', edit_label_path(label)
+      %td= link_to 'Destroy', label, confirm: 'Are you sure?', method: :delete
+%br/
+= link_to 'New Label', new_label_path
+
+= javascript_tag backbone_router("labels", @labels)

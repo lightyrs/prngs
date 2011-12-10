@@ -1,0 +1,23 @@
+%h1 Listing tracks
+%table
+  %tr
+    %th Title
+    %th Artist
+    %th Album
+    %th Label
+    %th
+    %th
+    %th
+  - @tracks.each do |track|
+    %tr
+      %td= track.title
+      %td= track.artist_id
+      %td= track.album_id
+      %td= track.label_id
+      %td= link_to 'Show', track
+      %td= link_to 'Edit', edit_track_path(track)
+      %td= link_to 'Destroy', track, confirm: 'Are you sure?', method: :delete
+%br/
+= link_to 'New Track', new_track_path
+
+= javascript_tag backbone_router("tracks", @tracks)

@@ -1,0 +1,10 @@
+%p#notice= notice
+%p
+  %b Name:
+  = @artist.name
+%p
+  %b Sound:
+  = @artist.sound
+= link_to 'Edit', edit_artist_path(@artist)
+|
+\#{link_to 'Back', artists_path}

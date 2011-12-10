@@ -1,0 +1,13 @@
+%p#notice= notice
+%p
+  %b Name:
+  = @source.name
+%p
+  %b Url:
+  = @source.url
+%p
+  %b Kind:
+  = @source.kind
+= link_to 'Edit', edit_source_path(@source)
+|
+\#{link_to 'Back', sources_path}

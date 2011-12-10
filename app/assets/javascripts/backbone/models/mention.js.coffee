@@ -2,6 +2,8 @@ class Prngs.Models.Mention extends Backbone.Model
   paramRoot: 'mention'
 
   defaults:
+    track_id: null
+    album_id: null
     source_id: null
     author_id: null
     text: null
