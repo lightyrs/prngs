@@ -30,6 +30,36 @@ nav {
   }
 }
 
+header {
+  .tweet-button {
+    iframe {
+      margin-bottom: -18px;
+    }
+  }
+}
+
+table {
+  tr {
+    &:nth-of-type(odd) {
+      background: #ebebeb;
+    }
+
+    &:first-of-type {
+      background: transparent;
+    }
+
+    td, th {
+      padding: 6px 20px 5px 10px;
+      text-align: left;
+    }
+
+    th {
+      font-weight: bold;
+      padding-bottom: 20px;
+    }
+  }
+}
+
 /* Everything Else */
 @media only screen and (min-width: 960px) {
   #logo {

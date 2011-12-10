@@ -5,7 +5,7 @@
     = stylesheet_link_tag    "application"
     = javascript_include_tag "application"
     = csrf_meta_tags
-  %body
+  %body{ :class => body_class }
     .primary.container
       .three.columns.sidebar
         = render "layouts/sidebar"

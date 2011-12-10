@@ -1,12 +1,22 @@
 module ApplicationHelper
 
+  include TweetButton
+
+  TweetButton.default_tweet_button_options = {
+    :via => "prngs",
+    :related => "lightyrs",
+    :count => "horizontal"
+  }
+
+  def body_class
+    controller.controller_name || ""
+  end
+
   def primary_nav
     html = ""
-
     SITE_SECTIONS.map do |section|
       html += "<li><a href=#{nav_links(section)}>#{section}</a></li>"
     end
-
     html
   end
 
