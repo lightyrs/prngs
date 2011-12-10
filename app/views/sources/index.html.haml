@@ -5,6 +5,7 @@
   %tr
     %th Name
     %th Url
+    %th Feeds
     %th Kind
     %th
     %th
@@ -13,6 +14,7 @@
     %tr
       %td= source.name
       %td= source.url
+      %td= source.feeds
       %td= source.kind
       %td= link_to 'Show', source
       %td= link_to 'Edit', edit_source_path(source)

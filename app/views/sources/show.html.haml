@@ -6,8 +6,12 @@
   %b Url:
   = @source.url
 %p
+  %b Feeds:
+  = @source.feeds
+%p
   %b Kind:
   = @source.kind
+
 = link_to 'Edit', edit_source_path(@source)
 |
 \#{link_to 'Back', sources_path}
