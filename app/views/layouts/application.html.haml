@@ -1,10 +1,15 @@
 !!!
 %html
   %head
-    %title Prngs
+    %title= APP_NAME
     = stylesheet_link_tag    "application"
     = javascript_include_tag "application"
     = csrf_meta_tags
   %body
-    = yield
-    = render "shared/flash"
+    .primary.container
+      .three.columns.sidebar
+        = render "layouts/sidebar"
+      .twelve.columns.offset-by-one.content
+        = render "layouts/header"
+        = yield
+        = render "shared/flash"
