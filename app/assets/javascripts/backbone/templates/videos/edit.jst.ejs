@@ -1,0 +1,30 @@
+<h1>Edit video</h1>
+
+<form id="edit-video" name="video">
+  <div class="field">
+    <label for="artist_id"> artist_id:</label>
+    <input type="text" name="artist_id" id="artist_id" value=<%= artist_id %> >
+  </div>
+
+  <div class="field">
+    <label for="title"> title:</label>
+    <input type="text" name="title" id="title" value=<%= title %> >
+  </div>
+
+  <div class="field">
+    <label for="url"> url:</label>
+    <input type="text" name="url" id="url" value=<%= url %> >
+  </div>
+
+  <div class="field">
+    <label for="kind"> kind:</label>
+    <input type="text" name="kind" id="kind" value=<%= kind %> >
+  </div>
+
+  <div class="actions">
+    <input type="submit" value="Update Video" />
+  </div>
+
+</form>
+
+<a href="#/index">Back</a>

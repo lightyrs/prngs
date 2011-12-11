@@ -11,11 +11,13 @@ module Lasso
     end
 
     def self.collate(feeds)
+      entries = []
       Source.all.each do |source|
         source.feeds.each do |feed_url|
-          dispatch feeds[feed_url].andand.entries
+          entries.push dispatch feeds[feed_url].andand.entries
         end
       end
+      entries
     end
 
     def self.dispatch(entries)

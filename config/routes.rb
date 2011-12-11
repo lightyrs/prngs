@@ -1,4 +1,6 @@
 Prngs::Application.routes.draw do
+  resources :videos
+
   root :to => "home#index"  
   
   ActiveAdmin.routes(self)
