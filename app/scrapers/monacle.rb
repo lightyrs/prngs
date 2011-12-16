@@ -3,26 +3,11 @@ module Monacle
   module Feeds
 
     def self.squint(entry)
-      puts "ORIGINAL: #{entry.andand.title}"
-      entry = reduce entry
-      puts "\n"
-      puts "-------------------------------"
-      puts entry.andand.title
-      puts "+++++++++++++++++++++++++++++++"
-      puts keywords(entry)
-      puts "-------------------------------"
-      puts "\n"
-      entry
+      reduce entry
     end
 
     def self.reduce(entry)
-      if keywords(entry).match(/news|concert reviews/i).present?
-        keywords(entry).match(/review|mp3|new release|listen/i).present? ? entry : nil
-      elsif sample(entry).match(/review|mp3|video|new release|listen| - /i).present?
-        entry
-      else
-        nil
-      end
+      sample(entry).match(/^vid|watch|mp4/i).present? ? entry : nil
     end
 
     def self.sample(entry)
