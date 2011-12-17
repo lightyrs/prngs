@@ -31,7 +31,13 @@ nav {
 }
 
 header {
+  h1 {
+    float: left;
+  }
+
   .tweet-button {
+    float: right;
+
     iframe {
       margin-bottom: -18px;
     }
@@ -69,12 +75,34 @@ table {
 
 /* Mobile */
 @media only screen and (max-width: 767px) {
-  header h1 { font-size: 34px; line-height: 37px; }
+  header {
+    h1 { 
+      font-size: 34px; 
+      line-height: 37px;
+    }
+  }
+
   nav { position: relative; }
+
   nav ul {
     display: none;
   }
+
   #logo { text-align: left; }
+}
+
+@media only screen and (max-width: 480px) {
+  header {
+    h1 { 
+      font-size: 34px; 
+      line-height: 37px;
+      float: none;
+    }
+
+    .tweet-button {
+      float: none;
+    }
+  }
 }
 
 /* Mobile Landscape */

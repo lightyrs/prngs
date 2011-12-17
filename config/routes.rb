@@ -1,5 +1,4 @@
 Prngs::Application.routes.draw do
-  resources :videos
 
   root :to => "home#index"  
   
@@ -20,6 +19,8 @@ Prngs::Application.routes.draw do
   resources :artists
 
   resources :tracks
+
+  resources :videos
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
