@@ -62,7 +62,7 @@ module Lasso
       unless video_url.nil?
         puts "#{video_url}".magenta
         video = VideoInfo.new(video_url)
-        video["url"] = video_url
+        video.url = video_url
         Video.construct(mention, video)
       end
     end

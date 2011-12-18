@@ -2,17 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="deb773b9-a826-4815-915b-f39e5ec1d692" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/db/migrate/20111218223633_add_fields_to_video.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/db/migrate/20111218233107_add_unique_index_on_url_to_videos.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/tasks/scrapers.rake" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/prngs.iml" afterPath="$PROJECT_DIR$/.idea/prngs.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gemfile.lock" afterPath="$PROJECT_DIR$/Gemfile.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gemfile" afterPath="$PROJECT_DIR$/Gemfile" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/video.rb" afterPath="$PROJECT_DIR$/app/models/video.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scrapers/lasso.rb" afterPath="$PROJECT_DIR$/app/scrapers/lasso.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scrapers/monacle.rb" afterPath="$PROJECT_DIR$/app/scrapers/monacle.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/schema.rb" afterPath="$PROJECT_DIR$/db/schema.rb" />
     </list>
     <ignored path="prngs.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -71,19 +61,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="lasso.rb" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="lasso.rb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/scrapers/lasso.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="64" column="32" selection-start="1676" selection-end="1676" vertical-scroll-proportion="0.0">
+            <state line="64" column="17" selection-start="1661" selection-end="1661" vertical-scroll-proportion="0.79857576">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="video.rb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="video.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/models/video.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="39" selection-start="214" selection-end="214" vertical-scroll-proportion="0.20142421">
+            <state line="24" column="16" selection-start="782" selection-end="782" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -936,16 +926,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/scrapers/lasso.rb">
+    <entry file="file://$PROJECT_DIR$/app/models/video.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="64" column="32" selection-start="1676" selection-end="1676" vertical-scroll-proportion="0.0">
+        <state line="24" column="16" selection-start="782" selection-end="782" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/video.rb">
+    <entry file="file://$PROJECT_DIR$/app/scrapers/lasso.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="39" selection-start="214" selection-end="214" vertical-scroll-proportion="0.20142421">
+        <state line="64" column="17" selection-start="1661" selection-end="1661" vertical-scroll-proportion="0.79857576">
           <folding />
         </state>
       </provider>
