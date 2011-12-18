@@ -18,6 +18,7 @@ end
 
 group :development do
   gem 'erb2haml'
+  gem 'seed_dump'
 end
 
 group :test do
@@ -41,4 +42,5 @@ gem 'songkickr'
 gem 'feedbag'
 gem 'feedzirra', :git => 'https://github.com/pauldix/feedzirra.git'
 gem 'andand', :git => 'https://github.com/raganwald/andand.git'
-gem 'seed_dump'
+gem 'video_info'
+gem 'string_score'
