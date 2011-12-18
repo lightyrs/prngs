@@ -76,7 +76,7 @@ module Sleuth
 
     def self.discover_blogs
       blogs_hash = construct_blogs_hash
-      blogs_hash.keys.reverse.each do |blog_name|
+      blogs_hash.keys.reverse.each_with_index do |blog_name, i|
         begin
           robot.get(listing_url(blogs_hash[blog_name])) do |page|
             blog_url = page.at("h1 a:first-child")["href"]
@@ -85,7 +85,11 @@ module Sleuth
         rescue StandardError => ex
           puts ex
         ensure
-          sleep (10 + rand(10)).seconds
+          if i > 0 && i%20 == 0
+            sleep 5.minutes
+          else
+            sleep (10 + rand(10)).seconds
+          end
         end
       end
     end

@@ -19,11 +19,12 @@ class Mention < ActiveRecord::Base
                 :date => entry.published,
                 :source_id => source.id
               )
-    mention.author_ids= Author.construct(entry.andand.author, mention.determine_author_kind)
+    mention.author_ids= Author.construct(entry.andand.author, mention.author_kind)
     mention.save
+    puts mention.authors
   end
 
-  def determine_author_kind
+  def author_kind
     case source.kind
     when "Blog"
       "Blogger"
