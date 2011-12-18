@@ -7,7 +7,7 @@ module Monacle
     end
 
     def self.reduce(entry)
-      sample(entry).match(/^vid|watch|mp4/i).present? ? entry : nil
+      sample(entry).match(/\b(vid\w*)|watch|mp4/i).present? ? entry : nil
     end
 
     def self.sample(entry)

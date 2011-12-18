@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111211181914) do
+ActiveRecord::Schema.define(:version => 20111217015743) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.integer  "resource_id",   :null => false
@@ -73,6 +73,13 @@ ActiveRecord::Schema.define(:version => 20111211181914) do
     t.datetime "updated_at"
   end
 
+  create_table "authors_mentions", :id => false, :force => true do |t|
+    t.integer "author_id"
+    t.integer "mention_id"
+  end
+
+  add_index "authors_mentions", ["author_id", "mention_id"], :name => "index_authors_mentions_on_author_id_and_mention_id"
+
   create_table "labels", :force => true do |t|
     t.string   "name"
     t.string   "rdio_url"
@@ -82,7 +89,6 @@ ActiveRecord::Schema.define(:version => 20111211181914) do
 
   create_table "mentions", :force => true do |t|
     t.integer  "source_id"
-    t.integer  "author_id"
     t.text     "text"
     t.string   "url"
     t.decimal  "rating",     :precision => 10, :scale => 0
@@ -95,6 +101,8 @@ ActiveRecord::Schema.define(:version => 20111211181914) do
     t.integer  "video_id"
     t.string   "title"
   end
+
+  add_index "mentions", ["url"], :name => "index_mentions_on_url", :unique => true
 
   create_table "sources", :force => true do |t|
     t.string   "name"

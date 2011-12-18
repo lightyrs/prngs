@@ -17,12 +17,14 @@ module Lasso
     def self.collate(feeds)
       entries = []
       Source.all.each do |source|
-        source.feeds.andand.each do |feed_url|
-          entries.push dispatch(source.id, feeds[feed_url].try(:entries))
+        begin
+          source.feeds.andand.each do |feed_url|
+            entries.push dispatch(source, feeds[feed_url].try(:entries))
+          end
+        rescue StandardError => e
+          puts "#{e}".red
         end
       end
-    rescue StandardError => e
-      puts "#{e}".red
     end
 
     def self.dispatch(source, entries)

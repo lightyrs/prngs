@@ -4,7 +4,7 @@
 %table
   %tr
     %th Source
-    %th Author
+    %th Authors
     %th Track
     %th Album
     %th Text
@@ -17,7 +17,7 @@
   - @mentions.each do |mention|
     %tr
       %td= mention.source_id
-      %td= mention.author_id
+      %td= mention.author_ids
       %td= mention.track_id
       %td= mention.album_id
       %td= mention.text
