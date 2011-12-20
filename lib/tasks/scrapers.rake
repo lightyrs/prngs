@@ -15,8 +15,13 @@ namespace :scrapers do
     Sleuth::Feeds.discover
   end
 
+  desc "Discover artists"
+  task :discover_artists, [:scope] => :discover_feeds do |t,args|
+    Lasso::Artists.wrangle
+  end
+
   desc "Discover video mentions from feeds"
-  task :discover_video_mentions, [:scope] => :discover_feeds do |t,args|
+  task :discover_video_mentions, [:scope] => :discover_artists do |t,args|
     Lasso::Feeds.wrangle
   end
 

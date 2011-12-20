@@ -11,7 +11,7 @@ module Monacle
     end
 
     def self.sample(entry)
-      "#{entry.andand.title} #{keywords(entry)}"
+      entry.andand.title
     end
 
     def self.keywords(entry)
@@ -22,6 +22,7 @@ module Monacle
   module Mentions
 
     def self.squint(mention, page)
+      puts "#{mention.source.name}".yellow
       reduce(mention, page)
     end
 
@@ -45,20 +46,29 @@ module Monacle
     def self.elect(mention, candidates)
       candidates_hash = {}
       candidates.each do |candidate|
-        candidates_hash[candidate] = sample(candidate)
+        candidates_hash[candidate] = sample(candidate) || ""
       end
-      sorted_candidates = score(mention.title, candidates_hash.values)
-      candidates_hash.key(sorted_candidates.first)
+      score(mention.title, candidates_hash)
     end
 
-    def self.score(scorer, samples)
-      scorer = StringScore.new(scorer)
-      scorer.sort_by_score(samples)
+    def self.score(scorer, candidates)
+      candidates.each do |candidate|
+        candidates[candidate.first] = scorer.pair_distance_similar candidate.last
+      end
+      frontrunner = candidates.values.sort.reverse.first
+      candidates.key(frontrunner)
     end
 
     def self.sample(candidate)
-      words = VideoInfo.new(candidate).title.split(" ")
-      words.any? ? words.max{ |a,b| a.length <=> b.length } : ""
+      begin
+        VideoInfo.new(candidate, "User-Agent" => user_agent).title
+      rescue StandardError => ex
+        puts "#{ex.message}".red
+      end
+    end
+
+    def self.user_agent
+      "Mozilla/5.0 (Windows; U; Windows NT 5.0; en-US; rv:1.4b) Gecko/20030516 Mozilla Firebird/0.6"
     end
   end
 end

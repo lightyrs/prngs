@@ -4,7 +4,8 @@ class Video < ActiveRecord::Base
   belongs_to :artist
 
   validates_presence_of :url
-  validates_uniqueness_of :url
+  validates_presence_of :video_id
+  validates_uniqueness_of :video_id
 
   def self.construct(mention, video)
     video = Video.find_or_create_by_url(
@@ -21,7 +22,7 @@ class Video < ActiveRecord::Base
               :width => video.width,
               :height => video.height
             )
-    mention << video
+    mention.video_id = video.id
     mention.save
   end
 end

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111218233107) do
+ActiveRecord::Schema.define(:version => 20111220001048) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.integer  "resource_id",   :null => false
@@ -63,7 +63,11 @@ ActiveRecord::Schema.define(:version => 20111218233107) do
     t.string   "spotify_url"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "lastfm_url"
+    t.string   "image"
   end
+
+  add_index "artists", ["name"], :name => "index_artists_on_name", :unique => true
 
   create_table "authors", :force => true do |t|
     t.string   "name"
@@ -142,6 +146,6 @@ ActiveRecord::Schema.define(:version => 20111218233107) do
     t.integer  "height"
   end
 
-  add_index "videos", ["url"], :name => "index_videos_on_url", :unique => true
+  add_index "videos", ["video_id"], :name => "index_videos_on_video_id", :unique => true
 
 end
