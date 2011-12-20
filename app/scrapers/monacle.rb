@@ -71,4 +71,24 @@ module Monacle
       "Mozilla/5.0 (Windows; U; Windows NT 5.0; en-US; rv:1.4b) Gecko/20030516 Mozilla Firebird/0.6"
     end
   end
+
+  module Videos
+
+    def self.squint(video)
+      candidates = []
+      candidates.push reduce("full match", video)
+      candidates.push reduce("loose match", video)
+      candidates
+    end
+
+    def self.reduce(method, video)
+      if method == "full match"
+        Artist.select([:id, :name]).reject do |artist|
+          video.title.andand.downcase.andand.match(/#{Regexp.quote(artist.name.downcase)}/).nil?
+        end
+      elsif method == "loose match"
+        LooseTightDictionary.new(Artist.select([:id, :name]), :read => :name).find(video.title)
+      end
+    end
+  end
 end

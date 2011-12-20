@@ -31,7 +31,9 @@ module Lasso
     def self.dispatch(artists_hash)
       artists_hash.each do |artist|
         begin
-          Artist.construct(artist)
+          if artist.first.andand.length > 2
+            Artist.construct(artist)
+          end
         rescue StandardError => ex
           puts "#{ex.message}".red
         end
@@ -106,14 +108,26 @@ module Lasso
     def self.dispatch(mention, page)
       video_url = Monacle::Mentions.squint(mention, page)
       unless video_url.blank?
-        puts "#{video_url}".magenta
         begin
+          video_url = scrub(video_url)
           video = VideoInfo.new(video_url, "User-Agent" => user_agent)
         rescue StandardError => ex
           puts "#{ex.message}".red
         end
-        video.url = video_url
-        Video.construct(mention, video)
+        if video.valid?
+          video.url = video_url
+          Video.construct(mention, video)
+        else
+          puts "#{video_url}".magenta
+        end
+      end
+    end
+
+    def self.scrub(url)
+      if url.match(/vimeo/).present?
+        url.gsub(/player.|video\//, "")
+      else
+        url
       end
     end
 
