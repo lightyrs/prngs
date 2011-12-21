@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111220001048) do
+ActiveRecord::Schema.define(:version => 20111221030452) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.integer  "resource_id",   :null => false
@@ -68,6 +68,13 @@ ActiveRecord::Schema.define(:version => 20111220001048) do
   end
 
   add_index "artists", ["name"], :name => "index_artists_on_name", :unique => true
+
+  create_table "artists_videos", :id => false, :force => true do |t|
+    t.integer "artist_id"
+    t.integer "video_id"
+  end
+
+  add_index "artists_videos", ["artist_id", "video_id"], :name => "index_artists_videos_on_artist_id_and_video_id"
 
   create_table "authors", :force => true do |t|
     t.string   "name"
@@ -129,7 +136,6 @@ ActiveRecord::Schema.define(:version => 20111220001048) do
   end
 
   create_table "videos", :force => true do |t|
-    t.integer  "artist_id"
     t.string   "title"
     t.string   "url"
     t.datetime "created_at"
