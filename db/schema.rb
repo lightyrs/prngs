@@ -146,6 +146,6 @@ ActiveRecord::Schema.define(:version => 20111220001048) do
     t.integer  "height"
   end
 
-  add_index "videos", ["video_id"], :name => "index_videos_on_video_id", :unique => true
+  add_index "videos", ["url"], :name => "index_videos_on_url", :unique => true
 
 end
