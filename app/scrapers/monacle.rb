@@ -76,12 +76,12 @@ module Monacle
 
     def self.squint
       Artist.all.each do |artist|
-        results = Video.solr_search do
-                    fulltext "#{artist.name}" do
+        search = Video.solr_search do
+                    fulltext %Q('#{artist.name}') do
                       phrase_fields :title => 5.0
                     end
         end
-        artist.video_ids= results.map(&:id)
+        artist.video_ids= search.andand.results.map(&:id)
         artist.save
       end
     end

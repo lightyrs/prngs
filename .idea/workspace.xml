@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="deb773b9-a826-4815-915b-f39e5ec1d692" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/prngs.iml" afterPath="$PROJECT_DIR$/.idea/prngs.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gemfile.lock" afterPath="$PROJECT_DIR$/Gemfile.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gemfile" afterPath="$PROJECT_DIR$/Gemfile" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/video.rb" afterPath="$PROJECT_DIR$/app/models/video.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scrapers/lasso.rb" afterPath="$PROJECT_DIR$/app/scrapers/lasso.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scrapers/monacle.rb" afterPath="$PROJECT_DIR$/app/scrapers/monacle.rb" />
     </list>
     <ignored path="prngs.iws" />
@@ -42,7 +38,16 @@
       <file leaf-file-name="monacle.rb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/scrapers/monacle.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="76" column="13" selection-start="1775" selection-end="1775" vertical-scroll-proportion="0.6419125">
+            <state line="79" column="46" selection-start="1900" selection-end="1900" vertical-scroll-proportion="0.664293">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="lasso.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/scrapers/lasso.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="34" column="83" selection-start="982" selection-end="982" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -92,12 +97,12 @@
         <option value="$PROJECT_DIR$/db/migrate/20111219233723_add_last_fm_cols_to_artist.rb" />
         <option value="$PROJECT_DIR$/db/migrate/20111220001048_add_unique_index_on_name_to_artists.rb" />
         <option value="$PROJECT_DIR$/lib/tasks/scrapers.rake" />
-        <option value="$PROJECT_DIR$/app/scrapers/lasso.rb" />
         <option value="$PROJECT_DIR$/db/migrate/20111221030222_remove_artist_id_from_videos.rb" />
         <option value="$PROJECT_DIR$/db/migrate/20111221030452_create_artists_videos.rb" />
         <option value="$PROJECT_DIR$/Gemfile" />
         <option value="$PROJECT_DIR$/app/models/artist.rb" />
         <option value="$PROJECT_DIR$/app/models/video.rb" />
+        <option value="$PROJECT_DIR$/app/scrapers/lasso.rb" />
         <option value="$PROJECT_DIR$/app/scrapers/monacle.rb" />
       </list>
     </option>
@@ -809,11 +814,6 @@
         <state line="1" column="29" selection-start="81" selection-end="81" vertical-scroll-proportion="0.033536587" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/scrapers/lasso.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="36" column="13" selection-start="970" selection-end="970" vertical-scroll-proportion="0.033536587" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/scrapers/sleuth.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="57" column="51" selection-start="1387" selection-end="1387" vertical-scroll-proportion="0.033536587" />
@@ -840,13 +840,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/mention.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="16" selection-start="704" selection-end="704" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/models/video.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="12" column="7" selection-start="278" selection-end="278" vertical-scroll-proportion="0.0">
@@ -854,9 +847,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/scrapers/lasso.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="34" column="83" selection-start="982" selection-end="982" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/mention.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="24" column="16" selection-start="704" selection-end="704" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/scrapers/monacle.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="76" column="13" selection-start="1775" selection-end="1775" vertical-scroll-proportion="0.6419125">
+        <state line="79" column="46" selection-start="1900" selection-end="1900" vertical-scroll-proportion="0.664293">
           <folding />
         </state>
       </provider>
