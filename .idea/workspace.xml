@@ -2,13 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="deb773b9-a826-4815-915b-f39e5ec1d692" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/.rakeTasks" afterPath="$PROJECT_DIR$/.idea/.rakeTasks" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/prngs.iml" afterPath="$PROJECT_DIR$/.idea/prngs.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/artist.rb" afterPath="$PROJECT_DIR$/app/models/artist.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/video.rb" afterPath="$PROJECT_DIR$/app/models/video.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scrapers/lasso.rb" afterPath="$PROJECT_DIR$/app/scrapers/lasso.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scrapers/monacle.rb" afterPath="$PROJECT_DIR$/app/scrapers/monacle.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/schema.rb" afterPath="$PROJECT_DIR$/db/schema.rb" />
     </list>
     <ignored path="prngs.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -34,7 +29,7 @@
       <file leaf-file-name="artist.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/models/artist.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="33" selection-start="68" selection-end="68" vertical-scroll-proportion="0.0">
+            <state line="5" column="31" selection-start="131" selection-end="131" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -43,7 +38,16 @@
       <file leaf-file-name="monacle.rb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/scrapers/monacle.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="80" column="9" selection-start="1889" selection-end="1889" vertical-scroll-proportion="0.77619535">
+            <state line="79" column="46" selection-start="1900" selection-end="1900" vertical-scroll-proportion="0.664293">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="lasso.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/scrapers/lasso.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="34" column="83" selection-start="982" selection-end="982" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -52,7 +56,16 @@
       <file leaf-file-name="video.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/models/video.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="3" column="34" selection-start="89" selection-end="89" vertical-scroll-proportion="0.0">
+            <state line="12" column="7" selection-start="278" selection-end="278" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="mention.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/models/mention.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="24" column="16" selection-start="704" selection-end="704" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -84,12 +97,12 @@
         <option value="$PROJECT_DIR$/db/migrate/20111219233723_add_last_fm_cols_to_artist.rb" />
         <option value="$PROJECT_DIR$/db/migrate/20111220001048_add_unique_index_on_name_to_artists.rb" />
         <option value="$PROJECT_DIR$/lib/tasks/scrapers.rake" />
-        <option value="$PROJECT_DIR$/Gemfile" />
-        <option value="$PROJECT_DIR$/app/scrapers/lasso.rb" />
         <option value="$PROJECT_DIR$/db/migrate/20111221030222_remove_artist_id_from_videos.rb" />
         <option value="$PROJECT_DIR$/db/migrate/20111221030452_create_artists_videos.rb" />
+        <option value="$PROJECT_DIR$/Gemfile" />
         <option value="$PROJECT_DIR$/app/models/artist.rb" />
         <option value="$PROJECT_DIR$/app/models/video.rb" />
+        <option value="$PROJECT_DIR$/app/scrapers/lasso.rb" />
         <option value="$PROJECT_DIR$/app/scrapers/monacle.rb" />
       </list>
     </option>
@@ -137,8 +150,6 @@
     </navigator>
     <panes>
       <pane id="RailsProjectView" />
-      <pane id="Scope" />
-      <pane id="Favorites" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -327,18 +338,20 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="Favorites" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="options.lastSelected" value="org.jetbrains.plugins.ruby.settings.RubyIdeSdkConfigurable" />
     <property name="recentsLimit" value="5" />
+    <property name="options.lastSelected" value="org.jetbrains.plugins.ruby.settings.RubyIdeSdkConfigurable" />
     <property name="RakeTaksPopup.undocumentedIncluded" value="true" />
     <property name="RailsGeneratorsPopup.hiddenIncluded" value="false" />
-    <property name="GoToClass.includeJavaFiles" value="false" />
-    <property name="options.searchVisible" value="true" />
     <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
+    <property name="GoToClass.includeJavaFiles" value="false" />
   </component>
   <component name="RunManager" selected="Rake.db:migrate">
     <configuration default="false" name="db:migrate" type="RakeRunConfigurationType" factoryName="Rake" temporary="true">
@@ -698,14 +711,13 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1920" height="1054" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33432245" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.27135417" sideWeight="0.677547" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3296875" sideWeight="0.0" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32245302" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -713,6 +725,7 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3264095" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33432245" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -761,11 +774,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/db/migrate/20111219233723_add_last_fm_cols_to_artist.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="40" selection-start="153" selection-end="153" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/db/migrate/20111218233107_add_unique_index_to_videos.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="2" column="4" selection-start="72" selection-end="117" vertical-scroll-proportion="0.044760935" />
@@ -783,84 +791,79 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/db/migrate/20111221030222_remove_artist_id_from_videos.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="44" selection-start="166" selection-end="166" vertical-scroll-proportion="0.20121951">
-          <folding />
-        </state>
+        <state line="6" column="44" selection-start="166" selection-end="166" vertical-scroll-proportion="0.20121951" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/db/migrate/20111217014528_create_authors_mentions.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="4" selection-start="67" selection-end="181" vertical-scroll-proportion="0.067073174">
-          <folding />
-        </state>
+        <state line="2" column="4" selection-start="67" selection-end="181" vertical-scroll-proportion="0.067073174" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/db/migrate/20111217015743_add_index_to_authors_mentions.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="4" selection-start="75" selection-end="129" vertical-scroll-proportion="0.067073174">
-          <folding />
-        </state>
+        <state line="2" column="4" selection-start="75" selection-end="129" vertical-scroll-proportion="0.067073174" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/db/migrate/20111221030452_create_artists_videos.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="5" selection-start="240" selection-end="240" vertical-scroll-proportion="0.2347561">
-          <folding />
-        </state>
+        <state line="7" column="5" selection-start="240" selection-end="240" vertical-scroll-proportion="0.2347561" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/config/initializers/credentials.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="29" selection-start="81" selection-end="81" vertical-scroll-proportion="0.033536587">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/scrapers/lasso.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="36" column="13" selection-start="970" selection-end="970" vertical-scroll-proportion="0.033536587">
-          <folding />
-        </state>
+        <state line="1" column="29" selection-start="81" selection-end="81" vertical-scroll-proportion="0.033536587" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/scrapers/sleuth.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="57" column="51" selection-start="1387" selection-end="1387" vertical-scroll-proportion="0.033536587">
+        <state line="57" column="51" selection-start="1387" selection-end="1387" vertical-scroll-proportion="0.033536587" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/sunspot.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Gemfile">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="47" column="12" selection-start="928" selection-end="928" vertical-scroll-proportion="0.7987805">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/mention.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="16" selection-start="704" selection-end="704" vertical-scroll-proportion="0.46341464">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/video.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="34" selection-start="89" selection-end="89" vertical-scroll-proportion="0.0">
+        <state line="16" column="19" selection-start="288" selection-end="288" vertical-scroll-proportion="0.19430315">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/models/artist.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="33" selection-start="68" selection-end="68" vertical-scroll-proportion="0.0">
+        <state line="5" column="31" selection-start="131" selection-end="131" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/video.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="7" selection-start="278" selection-end="278" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/scrapers/lasso.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="34" column="83" selection-start="982" selection-end="982" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/mention.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="24" column="16" selection-start="704" selection-end="704" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/scrapers/monacle.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="80" column="9" selection-start="1889" selection-end="1889" vertical-scroll-proportion="0.77619535">
+        <state line="79" column="46" selection-start="1900" selection-end="1900" vertical-scroll-proportion="0.664293">
           <folding />
         </state>
       </provider>

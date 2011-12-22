@@ -31,7 +31,8 @@ module Lasso
     def self.dispatch(artists_hash)
       artists_hash.each do |artist|
         begin
-          if artist.first.andand.length > 2
+          artist_name = artist.first
+          if artist_name.andand.length > 2 && artist_name.match(/^.unknown.$/).nil?
             Artist.construct(artist)
           end
         rescue StandardError => ex
