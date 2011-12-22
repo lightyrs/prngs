@@ -72,17 +72,18 @@ module Monacle
     end
   end
 
-  module Videos
+  module Artists
 
-    def self.squint(videos)
-      videos.each do |video|
-        video.artist_ids= reduce(video).id
-        video.save
+    def self.squint
+      Artist.all.each do |artist|
+        results = Video.solr_search do
+                    fulltext "#{artist.name}" do
+                      phrase_fields :title => 5.0
+                    end
+        end
+        artist.video_ids= results.map(&:id)
+        artist.save
       end
-    end
-
-    def self.reduce(video)
-      LooseTightDictionary.new(Artist.select([:id, :name]), :read => :name).find(video.title)
     end
   end
 end

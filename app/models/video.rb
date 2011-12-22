@@ -7,6 +7,17 @@ class Video < ActiveRecord::Base
   validates_presence_of :video_id
   validates_uniqueness_of :video_id
 
+  searchable do
+    text :title, :boost => 3.0 do
+      title.gsub(/\'s\b/, "")
+    end
+    text :mentions do
+      mentions.map do |mention|
+        mention.title.gsub(/\'s\b/, "")
+      end
+    end
+  end
+
   def self.construct(mention, video)
     video = Video.find_or_create_by_url(
               :title => video.title,

@@ -14,6 +14,7 @@ group :development, :test do
   gem 'colored'
   gem 'wirble'
   gem 'hirb'
+  gem 'progress_bar'
 end
 
 group :development do
@@ -46,3 +47,5 @@ gem 'andand', :git => 'https://github.com/raganwald/andand.git'
 gem 'video_info'
 gem 'loose_tight_dictionary'
 gem 'amatch'
+gem 'sunspot_rails'
+gem 'sunspot_solr'
