@@ -1,7 +1,7 @@
 class Video < ActiveRecord::Base
 
   has_many :mentions
-  belongs_to :artist
+  has_and_belongs_to_many :artists
 
   validates_presence_of :url
   validates_presence_of :video_id

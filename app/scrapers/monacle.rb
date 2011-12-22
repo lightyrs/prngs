@@ -74,21 +74,15 @@ module Monacle
 
   module Videos
 
-    def self.squint(video)
-      candidates = []
-      candidates.push reduce("full match", video)
-      candidates.push reduce("loose match", video)
-      candidates
+    def self.squint(videos)
+      videos.each do |video|
+        video.artist_ids= reduce(video).id
+        video.save
+      end
     end
 
-    def self.reduce(method, video)
-      if method == "full match"
-        Artist.select([:id, :name]).reject do |artist|
-          video.title.andand.downcase.andand.match(/#{Regexp.quote(artist.name.downcase)}/).nil?
-        end
-      elsif method == "loose match"
-        LooseTightDictionary.new(Artist.select([:id, :name]), :read => :name).find(video.title)
-      end
+    def self.reduce(video)
+      LooseTightDictionary.new(Artist.select([:id, :name]), :read => :name).find(video.title)
     end
   end
 end
