@@ -1,55 +1,6 @@
+# encoding: utf-8
+
 module Lasso
-
-  module Artists
-
-    def self.wrangle
-      if collate last_fm_users
-        puts "Success!".green
-      else
-        puts "There was an error wrangling the artists.".red
-      end
-    end
-
-    def self.collate(users)
-      artists_hash = {}
-      users.each do |user|
-        puts "#{user}".magenta
-        10.times do |i|
-          begin
-            artists = LastFM::Library.get_artists({:user => user, :page => i})
-            artists.values.first["artist"].each do |artist|
-              artists_hash[artist["name"]] = { :lastfm_url => artist["url"], :image => artist["image"].last["#text"] }
-            end
-          rescue StandardError => ex
-            puts "#{ex.message}".red
-          end
-        end
-      end
-      dispatch artists_hash
-    end
-
-    def self.dispatch(artists_hash)
-      artists_hash.each do |artist|
-        begin
-          artist_name = artist.first
-          if artist_name.andand.length > 2 && artist_name.match(/^.unknown.$/).nil?
-            Artist.construct(artist)
-          end
-        rescue StandardError => ex
-          puts "#{ex.message}".red
-        end
-      end
-    end
-
-    def self.last_fm_users
-      users_array = []
-      users = LastFM::Group.get_members(:group => "The Hype Machine", :page => rand(100))
-      users.values.first["user"].each do |user|
-        users_array.push user["name"]
-      end
-      users_array.push("hnovick")
-    end
-  end
 
   module Feeds
 
@@ -71,7 +22,6 @@ module Lasso
         begin
           source.feeds.andand.each do |feed_url|
             entries.push dispatch(source, feeds[feed_url].try(:entries))
-            puts "#{feed_url}".magenta
           end
         rescue StandardError => e
           puts "#{e}".red
@@ -83,13 +33,13 @@ module Lasso
       entries.andand.each do |entry|
         entry = Monacle::Feeds.squint(entry)
         unless entry.nil? || entry.andand.title.blank? || entry.andand.url.blank?
-          puts "#{entry.title.gsub(/\n?/, '')}".magenta
-          puts "#{entry.url}".yellow
+          puts "#{entry.title.gsub(/\n?/, '')}".green
           Mention.construct(source, entry)
         end
       end
     end
   end
+
 
   module Mentions
 
@@ -101,7 +51,6 @@ module Lasso
           end
         rescue StandardError => ex
           puts "#{ex.message}".red
-          puts "#{mention.andand.url}".yellow
         end
       end
     end
@@ -119,7 +68,7 @@ module Lasso
           video.url = video_url
           Video.construct(mention, video)
         else
-          puts "#{video_url}".magenta
+          puts "#{video_url}".red
         end
       end
     end

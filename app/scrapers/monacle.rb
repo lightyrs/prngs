@@ -1,3 +1,5 @@
+# encoding: utf-8
+
 module Monacle
 
   module Feeds
@@ -19,11 +21,12 @@ module Monacle
     end
   end
 
+
   module Mentions
 
     def self.squint(mention, page)
-      puts "#{mention.source.name}".yellow
       reduce(mention, page)
+      puts "#{mention.source}".green
     end
 
     def self.reduce(mention, page)
@@ -72,17 +75,69 @@ module Monacle
     end
   end
 
-  module Artists
 
-    def self.squint
-      Artist.all.each do |artist|
-        search = Video.solr_search do
-                    fulltext %Q('#{artist.name}') do
-                      phrase_fields :title => 5.0
-                    end
+  module Videos
+
+    def self.squint(videos)
+      videos.in_groups_of(2) do |video_group|
+        video_group.map do |video|
+          begin
+            reduce video
+          rescue StandardError => ex
+            puts "#{ex.message}".red
+          end
         end
-        artist.video_ids= search.andand.results.map(&:id)
-        artist.save
+        sleep 1.seconds
+      end
+    end
+
+    def self.reduce(video)
+      unless video.andand.artists.present? || video.title.nil?
+        text_sample = sample(video.title)
+        video.artist_ids= Echonest.extract(text_sample).andand.map(&:id)
+        video.save
+      end
+    end
+
+    def self.sample(title)
+      # Match #1
+      # Artist Name - Track Name
+      # Artist Name – Track Name
+      # Artist Name ~ Track Name
+      # Artist Name "Track Name"
+      # Artist Name 'Track Name'
+
+      # Match #2
+      # "Track Name" - Artist Name
+      # "Track Name" — Artist Name
+      # "Track Name" ~ Artist Name
+      # 'Track Name' - Artist Name
+      # 'Track Name' — Artist Name
+      # 'Track Name' ~ Artist Name
+
+      # Match #3
+      # Track Name by Artist Name
+      # "Track Name" by Artist Name
+      # 'Track Name' by Artist Name
+
+      if title.match(/(\A[^"'].*) (["']|[-–—~]{1} .*)/).present? ||
+         title.match(/\A["']{1}.*["']{1}\s?[-–—~]?\s?(.*)/).present? ||
+         title.match(/\A.* by (.*)/).present?
+
+        puts "\n#{$1.green}\n\n"
+        scrub $1
+      end
+    end
+
+    def self.scrub(text)
+      if text.match(/ [-–—~]( |\z)/).present? ||
+         text.match(/\A.* by (.*)/i).present? ||
+         text.match(/ - |ft.|feat |\.feat|featuring/i).present? ||
+         text.match(/(\(|\[)Official.*(\]|\))/i).present?
+
+         text.gsub(/ [-–—~]( |\z)/, " ").gsub(/\A.* by (.*)/i, " ").gsub(/ - |ft.|feat |\.feat|featuring/i, " ").gsub(/(\(|\[)Official.*(\]|\))/i, " ").strip!
+      else
+        text
       end
     end
   end

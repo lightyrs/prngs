@@ -5,11 +5,13 @@ class Artist < ActiveRecord::Base
   validates_presence_of :name
   validates_uniqueness_of :name
 
+  serialize :images
+  serialize :biographies
+
   def self.construct(artist)
     Artist.find_or_create_by_name(
-      :name => artist.first,
-      :lastfm_url => artist.last[:lastfm_url],
-      :image => artist.last[:image]
+      :name => artist.name,
+      :echonest_id => artist.id
     )
   end
 end

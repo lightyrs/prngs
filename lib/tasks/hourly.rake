@@ -15,8 +15,13 @@ namespace :hourly do
     Lasso::Mentions.wrangle(Mention.recently_created)
   end
 
+  desc "Associate videos with artists"
+  task :monacle_videos, [:scope] => :lasso_recent do |t,args|
+    Monacle::Videos.squint(Video.recently_created)
+  end
+
   desc "Set timestamp"
-  task :init, [:scope] => :lasso_recent do |t,args|
+  task :init, [:scope] => :monacle_videos do |t,args|
     Rails.logger.debug("END: #{Time.now}")
   end
 end

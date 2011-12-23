@@ -7,6 +7,8 @@ class Video < ActiveRecord::Base
   validates_presence_of :video_id
   validates_uniqueness_of :video_id
 
+  scope :recently_created, lambda { where("created_at >= ?", 1.hours.ago) }
+
   searchable do
     text :title, :boost => 3.0 do
       title.gsub(/\'s\b/, "")

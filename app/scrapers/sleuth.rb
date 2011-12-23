@@ -1,3 +1,5 @@
+# encoding: utf-8
+
 module Sleuth
 
   module Feeds
@@ -7,7 +9,7 @@ module Sleuth
         source_feeds = filter(Feedbag.find(source.url))
         source.feeds = source_feeds
         source.save
-        puts "#{source_feeds.size} Content Feeds Were Found for #{source.name}"
+        puts "#{source_feeds.size} Content Feeds Were Found for #{source.name}".green
       end
     end
 
@@ -17,6 +19,7 @@ module Sleuth
       end
     end
   end
+
 
   module HypeMachine
 
@@ -39,12 +42,6 @@ module Sleuth
       end
     end
 
-    #def self.blog_count
-    #  robot.get("http://hypem.com/blogs/alpha/all") do |page|
-    #    page.at(/[0-9]*[0-9]/)
-    #  end
-    #end
-
     def self.construct_blogs_hash
       blogs_hash = {}
       active = true
@@ -57,7 +54,7 @@ module Sleuth
           
           robot.get(directory_url(i)) do |page|
             if page.links.present?
-              puts i
+              puts i.green
               page.links.each do |link|
                 blogs_hash[link.text.strip!] = link.href
               end
@@ -83,7 +80,7 @@ module Sleuth
             Source.construct(blog_name, blog_url, "Blog")
           end
         rescue StandardError => ex
-          puts ex
+          puts "#{ex.message}".red
         ensure
           if i > 0 && i%20 == 0
             sleep 5.minutes
