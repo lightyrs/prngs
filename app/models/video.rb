@@ -10,14 +10,7 @@ class Video < ActiveRecord::Base
   scope :recently_created, lambda { where("created_at >= ?", 1.hours.ago) }
 
   searchable do
-    text :title, :boost => 3.0 do
-      title.gsub(/\'s\b/, "")
-    end
-    text :mentions do
-      mentions.map do |mention|
-        mention.title.gsub(/\'s\b/, "")
-      end
-    end
+    text :title
   end
 
   def self.construct(mention, video)

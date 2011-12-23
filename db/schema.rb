@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111222192212) do
+ActiveRecord::Schema.define(:version => 20111223200806) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.integer  "resource_id",   :null => false
@@ -63,6 +63,8 @@ ActiveRecord::Schema.define(:version => 20111222192212) do
     t.string   "echonest_id"
     t.text     "images"
     t.text     "biographies"
+    t.decimal  "hotttness",   :precision => 10, :scale => 0
+    t.decimal  "familiarity", :precision => 10, :scale => 0
   end
 
   add_index "artists", ["name"], :name => "index_artists_on_name", :unique => true

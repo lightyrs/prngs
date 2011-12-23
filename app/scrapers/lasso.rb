@@ -96,4 +96,22 @@ module Lasso
       end
     end
   end
+
+
+  module Artists
+
+    def self.wrangle(artists)
+      artists.in_groups_of(2).each do |artist_group|
+        artist_group.each do |artist|
+          begin
+            Echonest.profile(artist)
+            puts "#{artist.name}".green
+          rescue StandardError => ex
+            puts "#{ex.message}".red
+          end
+        end
+        sleep 1.seconds
+      end
+    end
+  end
 end

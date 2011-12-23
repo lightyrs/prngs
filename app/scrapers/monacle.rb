@@ -25,8 +25,8 @@ module Monacle
   module Mentions
 
     def self.squint(mention, page)
+      puts "#{mention.source.andand.name}".green
       reduce(mention, page)
-      puts "#{mention.source}".green
     end
 
     def self.reduce(mention, page)
@@ -94,6 +94,7 @@ module Monacle
     def self.reduce(video)
       unless video.andand.artists.present? || video.title.nil?
         text_sample = sample(video.title)
+        puts "\n#{text_sample.green}\n\n"
         video.artist_ids= Echonest.extract(text_sample).andand.map(&:id)
         video.save
       end
@@ -124,21 +125,20 @@ module Monacle
          title.match(/\A["']{1}.*["']{1}\s?[-–—~]?\s?(.*)/).present? ||
          title.match(/\A.* by (.*)/).present?
 
-        puts "\n#{$1.green}\n\n"
-        scrub $1
+        title = $1
       end
+      scrub title
     end
 
     def self.scrub(text)
       if text.match(/ [-–—~]( |\z)/).present? ||
          text.match(/\A.* by (.*)/i).present? ||
-         text.match(/ - |ft.|feat |\.feat|featuring/i).present? ||
+         text.match(/ - |ft.|feat | feat\.|featuring|exclusive|premier./i).present? ||
          text.match(/(\(|\[)Official.*(\]|\))/i).present?
 
-         text.gsub(/ [-–—~]( |\z)/, " ").gsub(/\A.* by (.*)/i, " ").gsub(/ - |ft.|feat |\.feat|featuring/i, " ").gsub(/(\(|\[)Official.*(\]|\))/i, " ").strip!
-      else
-        text
+         text = text.gsub(/ [-–—~]( |\z)/, " ").gsub(/\A.* by (.*)/i, " ").gsub(/ - |ft.|feat |\.feat|featuring|exclusive|premier./i, " ").gsub(/(\(|\[)Official.*(\]|\))/i, " ").strip!
       end
+      text
     end
   end
 end
