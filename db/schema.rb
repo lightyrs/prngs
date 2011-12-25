@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111223200806) do
+ActiveRecord::Schema.define(:version => 20111223215843) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.integer  "resource_id",   :null => false
@@ -63,8 +63,8 @@ ActiveRecord::Schema.define(:version => 20111223200806) do
     t.string   "echonest_id"
     t.text     "images"
     t.text     "biographies"
-    t.decimal  "hotttness",   :precision => 10, :scale => 0
-    t.decimal  "familiarity", :precision => 10, :scale => 0
+    t.decimal  "hotttnesss",  :precision => 15, :scale => 10, :default => 0.0
+    t.decimal  "familiarity", :precision => 15, :scale => 10, :default => 0.0
   end
 
   add_index "artists", ["name"], :name => "index_artists_on_name", :unique => true
@@ -122,6 +122,7 @@ ActiveRecord::Schema.define(:version => 20111223200806) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.text     "feeds"
+    t.integer  "popularity"
   end
 
   create_table "tracks", :force => true do |t|
@@ -150,6 +151,7 @@ ActiveRecord::Schema.define(:version => 20111223200806) do
     t.string   "thumbnail_large"
     t.integer  "width"
     t.integer  "height"
+    t.integer  "popularity"
   end
 
   add_index "videos", ["url"], :name => "index_videos_on_url", :unique => true

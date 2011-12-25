@@ -5,10 +5,11 @@ class Source < ActiveRecord::Base
   serialize :feeds
 
   def self.construct(name, url, kind)
-    Source.find_or_create_by_name(
-      :name => name,
-      :url => url,
-      :kind => kind
-    )
+    source = Source.find_or_create_by_name(
+               :name => name,
+               :url => url,
+               :kind => kind
+             )
+    BeanCounter.rank(source)
   end
 end

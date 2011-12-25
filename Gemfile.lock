@@ -201,6 +201,7 @@ GEM
       oauth (>= 0.3.0)
     rdoc (3.11)
       json (~> 1.4)
+    redis (2.2.2)
     responders (0.6.4)
     rest-client (1.6.7)
       mime-types (>= 1.16)
@@ -219,6 +220,11 @@ GEM
       nokogiri (> 0.0.0)
     seed_dump (0.3.4)
     sexp_processor (3.0.9)
+    share_counts (0.1.4)
+      json
+      nokogiri
+      redis
+      rest-client
     skeleton-rails (0.0.1)
     songkickr (0.2.0)
     sprockets (2.0.3)
@@ -286,6 +292,7 @@ DEPENDENCIES
   rdio
   sass-rails (~> 3.1.5)
   seed_dump
+  share_counts
   skeleton-rails
   songkickr
   sunspot_rails

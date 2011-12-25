@@ -25,14 +25,13 @@ module Echonest
     url = "http://developer.echonest.com/api/v4/artist/profile?api_key=#{API_KEY}&id=#{artist.echonest_id}&format=json&bucket=biographies&bucket=familiarity&bucket=hotttnesss&bucket=images"
     response = make_request(url)
     if response.status["message"] == "Success"
-      response.artist do |artist_data|
-        artist.update_attributes(
-          :hotttness => artist_data["hotttness"],
-          :familiarity => artist_data["familiarity"],
-          :images => artist_data["images"],
-          :biographies => artist_data["biographies"]
-        )
-      end
+      response = OpenStruct.new(response.artist)
+      artist.update_attributes(
+        :hotttnesss => response.hotttnesss,
+        :familiarity => response.familiarity,
+        :images => response.images,
+        :biographies => response.biographies
+      )
     end
   end
 end

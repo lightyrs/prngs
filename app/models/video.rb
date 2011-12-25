@@ -8,6 +8,7 @@ class Video < ActiveRecord::Base
   validates_uniqueness_of :video_id
 
   scope :recently_created, lambda { where("created_at >= ?", 1.hours.ago) }
+  scope :created_this_week, lambda { where("created_at >= ?", 7.days.ago) }
 
   searchable do
     text :title
@@ -30,5 +31,6 @@ class Video < ActiveRecord::Base
             )
     mention.video_id = video.id
     mention.save
+    BeanCounter.rank(video)
   end
 end

@@ -11,9 +11,10 @@ class Artist < ActiveRecord::Base
   scope :recently_created, lambda { where("created_at >= ?", 1.hours.ago) }
 
   def self.construct(artist)
-    Artist.find_or_create_by_name(
-      :name => artist.name,
-      :echonest_id => artist.id
-    )
+    artist = Artist.find_or_create_by_name(
+               :name => artist.name,
+               :echonest_id => artist.id
+             )
+    BeanCounter.rank(artist)
   end
 end
