@@ -10,6 +10,16 @@ class Video < ActiveRecord::Base
   include NamedScopes::DateTime
   include NamedScopes::Popularity
 
+  scope :popular_from_artist, lambda { |artist, age|
+    Video.joins{artists}.where{artists.id == artist.id}.popular_from_last(age)
+  }
+  scope :popular_from_source, lambda { |source, age|
+    Video.joins{mentions.source}.where{mentions.source_id == source.id}.popular_from_last(age)
+  }
+  scope :popular_from_author, lambda { |author, age|
+    Video.joins{mentions.authors}.where{mentions.authors.id == author.id}.popular_from_last(age)
+  }
+
   searchable do
     text :title
   end

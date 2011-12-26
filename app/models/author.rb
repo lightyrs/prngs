@@ -4,6 +4,9 @@ class Author < ActiveRecord::Base
 
   validates_presence_of :name
 
+  include NamedScopes::DateTime
+
+
   def self.construct(authors, kind)
     unless authors.blank?
       authors = extract_authors(authors)
