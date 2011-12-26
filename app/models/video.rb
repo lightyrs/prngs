@@ -15,6 +15,10 @@ class Video < ActiveRecord::Base
   end
 
 
+  def sources
+    mentions.map(&:source)
+  end
+
   def self.construct(mention, video)
     video = Video.find_or_create_by_url(
               :title => video.title,

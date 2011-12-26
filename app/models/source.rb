@@ -19,8 +19,4 @@ class Source < ActiveRecord::Base
              )
     BeanCounter.rank(source)
   end
-
-  def self.most_popular_overall
-    order("popularity DESC").first
-  end
 end
