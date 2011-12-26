@@ -27,7 +27,7 @@ module Echonest
     if response.status["message"] == "Success"
       response = OpenStruct.new(response.artist)
       artist.update_attributes(
-        :hotttnesss => response.hotttnesss,
+        :popularity => response.hotttnesss,
         :familiarity => response.familiarity,
         :images => response.images,
         :biographies => response.biographies

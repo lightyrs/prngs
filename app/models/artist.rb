@@ -8,7 +8,9 @@ class Artist < ActiveRecord::Base
   serialize :images
   serialize :biographies
 
-  scope :recently_created, lambda { where("created_at >= ?", 1.hours.ago) }
+  include NamedScopes::DateTime
+  include NamedScopes::Popularity
+
 
   def self.construct(artist)
     artist = Artist.find_or_create_by_name(

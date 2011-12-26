@@ -79,12 +79,12 @@ module Monacle
   module Videos
 
     def self.squint(videos)
-      videos.in_groups_of(2) do |video_group|
-        video_group.map do |video|
+      [videos].flatten.in_groups_of(2, false) do |video_group|
+        video_group.flatten.map do |video|
           begin
             reduce video
           rescue StandardError => ex
-            puts "#{ex.message}".red
+            puts "#{ex.inspect}".red
           end
         end
         sleep 1.seconds
@@ -95,7 +95,7 @@ module Monacle
       unless video.andand.artists.present? || video.title.nil?
         text_sample = sample(video.title)
         puts "\n#{text_sample.green}\n\n"
-        video.artist_ids= Echonest.extract(text_sample).andand.map(&:id)
+        video.artist_ids= Echonest.extract(text_sample).flatten.andand.map(&:id)
         video.save
       end
     end

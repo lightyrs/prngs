@@ -7,12 +7,13 @@ class Video < ActiveRecord::Base
   validates_presence_of :video_id
   validates_uniqueness_of :video_id
 
-  scope :recently_created, lambda { where("created_at >= ?", 1.hours.ago) }
-  scope :created_this_week, lambda { where("created_at >= ?", 7.days.ago) }
+  include NamedScopes::DateTime
+  include NamedScopes::Popularity
 
   searchable do
     text :title
   end
+
 
   def self.construct(mention, video)
     video = Video.find_or_create_by_url(

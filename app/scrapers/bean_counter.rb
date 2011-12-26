@@ -1,8 +1,8 @@
 module BeanCounter
 
   def self.rank(objects)
-    objects.in_groups_of(2).each do |object_group|
-      object_group.each do |object|
+    [objects].flatten.in_groups_of(2, false).each do |object_group|
+      object_group.flatten.each do |object|
         if object.respond_to?(:url)
           object.update_attribute(:popularity, popularity(object.url))
         end

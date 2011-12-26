@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111223215843) do
+ActiveRecord::Schema.define(:version => 20111226061008) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.integer  "resource_id",   :null => false
@@ -63,7 +63,7 @@ ActiveRecord::Schema.define(:version => 20111223215843) do
     t.string   "echonest_id"
     t.text     "images"
     t.text     "biographies"
-    t.decimal  "hotttnesss",  :precision => 15, :scale => 10, :default => 0.0
+    t.decimal  "popularity",  :precision => 15, :scale => 10, :default => 0.0
     t.decimal  "familiarity", :precision => 15, :scale => 10, :default => 0.0
   end
 
@@ -124,6 +124,8 @@ ActiveRecord::Schema.define(:version => 20111223215843) do
     t.text     "feeds"
     t.integer  "popularity"
   end
+
+  add_index "sources", ["name"], :name => "index_sources_on_name", :unique => true
 
   create_table "tracks", :force => true do |t|
     t.string   "title"

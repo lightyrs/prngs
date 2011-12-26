@@ -11,7 +11,8 @@ class Mention < ActiveRecord::Base
   validates_presence_of :url
   validates_uniqueness_of :url
 
-  scope :recently_created, lambda { where("created_at >= ?", 1.hours.ago) }
+  include NamedScopes::DateTime
+
 
   def self.construct(source, entry)
     mention = Mention.new(

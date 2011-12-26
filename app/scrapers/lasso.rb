@@ -101,8 +101,8 @@ module Lasso
   module Artists
 
     def self.wrangle(artists)
-      artists.in_groups_of(2).each do |artist_group|
-        artist_group.each do |artist|
+      [artists].flatten.in_groups_of(2, false).each do |artist_group|
+        artist_group.flatten.each do |artist|
           begin
             Echonest.profile(artist)
             puts "#{artist.name}".green
