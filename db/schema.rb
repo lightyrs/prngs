@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111226061008) do
+ActiveRecord::Schema.define(:version => 20111227001605) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.integer  "resource_id",   :null => false
@@ -154,6 +154,7 @@ ActiveRecord::Schema.define(:version => 20111226061008) do
     t.integer  "width"
     t.integer  "height"
     t.integer  "popularity"
+    t.text     "url_html"
   end
 
   add_index "videos", ["url"], :name => "index_videos_on_url", :unique => true
