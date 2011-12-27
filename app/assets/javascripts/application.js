@@ -12,4 +12,3 @@
 //= require backbone_rails_sync
 //= require backbone_datalink
 //= require backbone/prngs
-//= require_directory ./application
