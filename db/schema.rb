@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111227001605) do
+ActiveRecord::Schema.define(:version => 20111227092905) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.integer  "resource_id",   :null => false
@@ -45,16 +45,6 @@ ActiveRecord::Schema.define(:version => 20111227001605) do
 
   add_index "admin_users", ["email"], :name => "index_admin_users_on_email", :unique => true
   add_index "admin_users", ["reset_password_token"], :name => "index_admin_users_on_reset_password_token", :unique => true
-
-  create_table "albums", :force => true do |t|
-    t.string   "title"
-    t.integer  "artist_id"
-    t.integer  "label_id"
-    t.string   "rdio_url"
-    t.string   "spotify_url"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
 
   create_table "artists", :force => true do |t|
     t.string   "name"
@@ -91,9 +81,10 @@ ActiveRecord::Schema.define(:version => 20111227001605) do
 
   add_index "authors_mentions", ["author_id", "mention_id"], :name => "index_authors_mentions_on_author_id_and_mention_id"
 
-  create_table "labels", :force => true do |t|
+  create_table "identities", :force => true do |t|
     t.string   "name"
-    t.string   "rdio_url"
+    t.string   "email"
+    t.string   "password_digest"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -102,13 +93,9 @@ ActiveRecord::Schema.define(:version => 20111227001605) do
     t.integer  "source_id"
     t.text     "text"
     t.string   "url"
-    t.decimal  "rating",     :precision => 10, :scale => 0
-    t.string   "sentiment"
     t.datetime "date"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "track_id"
-    t.integer  "album_id"
     t.integer  "video_id"
     t.string   "title"
   end
@@ -127,13 +114,10 @@ ActiveRecord::Schema.define(:version => 20111227001605) do
 
   add_index "sources", ["name"], :name => "index_sources_on_name", :unique => true
 
-  create_table "tracks", :force => true do |t|
-    t.string   "title"
-    t.integer  "artist_id"
-    t.integer  "album_id"
-    t.integer  "label_id"
-    t.string   "rdio_url"
-    t.string   "spotify_url"
+  create_table "users", :force => true do |t|
+    t.string   "provider"
+    t.string   "uid"
+    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

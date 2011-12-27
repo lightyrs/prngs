@@ -6,19 +6,18 @@ Prngs::Application.routes.draw do
 
   devise_for :admin_users, ActiveAdmin::Devise.config
 
+  match '/auth/:provider/callback', to: 'sessions#create'
+  match "/signout" => "sessions#destroy", :as => :signout
+
+  resources :identities
+
   resources :authors
 
   resources :sources
 
   resources :mentions
 
-  resources :labels
-
-  resources :albums
-
   resources :artists
-
-  resources :tracks
 
   resources :videos
 

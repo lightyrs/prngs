@@ -1,16 +1,15 @@
 source 'http://rubygems.org'
 
 gem 'rails', '3.1.3'
-
 gem 'mysql2', '~> 0.3.10'
 
 group :assets do
-  gem 'sass-rails',   '~> 3.1.5'
   gem 'coffee-rails', '~> 3.1.1'
   gem 'uglifier', '>= 1.0.3'
 end
 
 group :development, :test do
+  gem 'thin'
   gem 'colored'
   gem 'wirble'
   gem 'hirb'
@@ -29,9 +28,11 @@ end
 # prngs
 gem 'whenever', :require => false
 gem 'omniauth'
+gem 'omniauth-identity'
 gem 'omniauth-facebook'
 gem 'omniauth-twitter'
 gem 'haml', '~> 3.1.3'
+gem 'sass-rails', '~> 3.1.5'
 gem 'jquery-rails'
 gem 'skeleton-rails'
 gem 'heroku'

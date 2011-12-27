@@ -3,9 +3,11 @@ class Prngs.Models.Artist extends Backbone.Model
 
   defaults:
     name: null
-    sound: null
-    rdio_url: null
-    spotify_url: null
+    echonest_id: null
+    images: null
+    biographies: null
+    popularity: null
+    familiarity: null
 
 class Prngs.Collections.ArtistsCollection extends Backbone.Collection
   model: Prngs.Models.Artist

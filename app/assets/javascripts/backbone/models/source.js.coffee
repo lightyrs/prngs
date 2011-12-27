@@ -5,6 +5,8 @@ class Prngs.Models.Source extends Backbone.Model
     name: null
     url: null
     kind: null
+    feeds: null
+    popularity: null
 
 class Prngs.Collections.SourcesCollection extends Backbone.Collection
   model: Prngs.Models.Source
