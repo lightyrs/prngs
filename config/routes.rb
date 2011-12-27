@@ -3,13 +3,15 @@ Prngs::Application.routes.draw do
   root :to => "home#index"  
   
   ActiveAdmin.routes(self)
-
   devise_for :admin_users, ActiveAdmin::Devise.config
 
-  match '/auth/:provider/callback', to: 'sessions#create'
-  match "/signout" => "sessions#destroy", :as => :signout
-
+  match "/login", to: "sessions#new", :as => "login"
+  match "/auth/:provider/callback", to: "sessions#create"
+  match "/auth/failure", to: "sessions#failure"
+  match "/logout", to: "sessions#destroy", :as => "logout"
   resources :identities
+
+  post "/deauth/:provider", to: "users#deauth", :as => "deauth"
 
   resources :authors
 

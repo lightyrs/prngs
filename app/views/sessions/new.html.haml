@@ -1,12 +1,12 @@
 - if current_user
 
   Welcome #{current_user.name}!
-  = link_to "Sign Out", signout_path
+  = link_to "Log Out", logout_path
 
 - else
 
-  = link_to "Sign in with Facebook", "/auth/facebook"
-  = link_to "Sign in with Twitter", "/auth/twitter"
+  = link_to "Log In with Facebook", "/auth/facebook"
+  = link_to "Log In with Twitter", "/auth/twitter"
 
   %p
     %strong Don't use these services?

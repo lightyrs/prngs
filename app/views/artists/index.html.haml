@@ -1,21 +1,4 @@
 - content_for(:heading) do
-  %h1 Listing artists
-
-%table
-  %tr
-    %th Name
-    %th Sound
-    %th
-    %th
-    %th
-  - @artists.each do |artist|
-    %tr
-      %td= artist.name
-      %td= artist.sound
-      %td= link_to 'Show', artist
-      %td= link_to 'Edit', edit_artist_path(artist)
-      %td= link_to 'Destroy', artist, confirm: 'Are you sure?', method: :delete
-%br/
-= link_to 'New Artist', new_artist_path
+  %h1 Artists
 
 = javascript_tag backbone_router("artists", @artists)

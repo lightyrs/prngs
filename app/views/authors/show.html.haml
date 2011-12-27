@@ -1,13 +1,1 @@
-%p#notice= notice
-%p
-  %b Name:
-  = @author.name
-%p
-  %b Url:
-  = @author.url
-%p
-  %b Kind:
-  = @author.kind
-= link_to 'Edit', edit_author_path(@author)
-|
-\#{link_to 'Back', authors_path}
+= render @author

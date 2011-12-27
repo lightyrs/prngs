@@ -3,6 +3,7 @@ namespace :hourly do
   desc "Set timestamp"
   task :begin, [:scope] => :environment do |t,args|
     puts "\nSTART: #{Time.now}\n\n"
+    Rails.application.eager_load!
   end
 
   desc "Discover video mentions from feeds"

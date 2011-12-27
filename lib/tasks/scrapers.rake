@@ -3,6 +3,7 @@ namespace :scrapers do
   desc "Start"
   task :timestamp, [:scope] => :environment do |t,args|
     Rails.logger.debug("START: #{Time.now}")
+    Rails.application.eager_load!
   end
 
   desc "Discover sources from the Hype Machine"

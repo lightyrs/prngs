@@ -3,6 +3,7 @@ namespace :daily do
   desc "Set timestamp"
   task :begin, [:scope] => :environment do |t,args|
     puts "\nSTART: #{Time.now}\n\n"
+    Rails.application.eager_load!
   end
 
   desc "Discover popularity on social networks for videos created in the last 7 days"

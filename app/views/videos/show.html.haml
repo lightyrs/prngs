@@ -1,16 +1,1 @@
-%p#notice= notice
-%p
-  %b Artist:
-  = @video.artist_id
-%p
-  %b Title:
-  = @video.title
-%p
-  %b Url:
-  = @video.url
-%p
-  %b Kind:
-  = @video.kind
-= link_to 'Edit', edit_video_path(@video)
-|
-\#{link_to 'Back', videos_path}
+= render @video

@@ -1,23 +1,4 @@
 - content_for(:heading) do
-  %h1 Listing authors
-
-%table
-  %tr
-    %th Name
-    %th Url
-    %th Kind
-    %th
-    %th
-    %th
-  - @authors.each do |author|
-    %tr
-      %td= author.name
-      %td= author.url
-      %td= author.kind
-      %td= link_to 'Show', author
-      %td= link_to 'Edit', edit_author_path(author)
-      %td= link_to 'Destroy', author, confirm: 'Are you sure?', method: :delete
-%br/
-= link_to 'New Author', new_author_path
+  %h1 Authors
 
 = javascript_tag backbone_router("authors", @authors)

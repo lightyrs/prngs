@@ -1,23 +1,4 @@
 - content_for(:heading) do
-  %h1 Listing videos
+  %h1 Videos
 
-%table
-  %tr
-    %th Artist
-    %th Title
-    %th Url
-    %th Kind
-    %th
-    %th
-    %th
-  - @videos.each do |video|
-    %tr
-      %td= video.artist_id
-      %td= video.title
-      %td= video.url
-      %td= video.kind
-      %td= link_to 'Show', video
-      %td= link_to 'Edit', edit_video_path(video)
-      %td= link_to 'Destroy', video, confirm: 'Are you sure?', method: :delete
-%br/
-= link_to 'New Video', new_video_path
+= javascript_tag backbone_router("videos", @videos)
