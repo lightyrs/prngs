@@ -27,6 +27,7 @@ group :test do
 end
 
 # prngs
+gem 'whenever', :require => false
 gem 'haml', '~> 3.1.3'
 gem 'jquery-rails'
 gem 'skeleton-rails'
