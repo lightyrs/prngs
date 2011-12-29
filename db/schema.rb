@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111227092905) do
+ActiveRecord::Schema.define(:version => 20111228224236) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.integer  "resource_id",   :null => false
@@ -66,6 +66,14 @@ ActiveRecord::Schema.define(:version => 20111227092905) do
 
   add_index "artists_videos", ["artist_id", "video_id"], :name => "index_artists_videos_on_artist_id_and_video_id"
 
+  create_table "authentications", :force => true do |t|
+    t.string   "provider"
+    t.string   "uid"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "authors", :force => true do |t|
     t.string   "name"
     t.string   "url"
@@ -80,14 +88,6 @@ ActiveRecord::Schema.define(:version => 20111227092905) do
   end
 
   add_index "authors_mentions", ["author_id", "mention_id"], :name => "index_authors_mentions_on_author_id_and_mention_id"
-
-  create_table "identities", :force => true do |t|
-    t.string   "name"
-    t.string   "email"
-    t.string   "password_digest"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
 
   create_table "mentions", :force => true do |t|
     t.integer  "source_id"
@@ -115,11 +115,11 @@ ActiveRecord::Schema.define(:version => 20111227092905) do
   add_index "sources", ["name"], :name => "index_sources_on_name", :unique => true
 
   create_table "users", :force => true do |t|
-    t.string   "provider"
-    t.string   "uid"
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "email"
+    t.string   "handle"
   end
 
   create_table "videos", :force => true do |t|

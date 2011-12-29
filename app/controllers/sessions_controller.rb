@@ -3,9 +3,12 @@ class SessionsController < ApplicationController
   end
 
   def create
-    user = User.from_omniauth(env["omniauth.auth"])
+    auth = Authentication.from_omniauth(env["omniauth.auth"], current_user)
+    user = auth.user
     session[:user_id] = user.id
-    redirect_to root_url, notice: "Logged In"
+    session[:provider] = auth.provider
+    current_user ? @notice = "Connected with #{auth.provider}" : "Logged In"
+    redirect_to root_url, notice: @notice
   end
 
   def destroy

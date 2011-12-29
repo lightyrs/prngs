@@ -28,7 +28,6 @@ end
 # prngs
 gem 'whenever', :require => false
 gem 'omniauth'
-gem 'omniauth-identity'
 gem 'omniauth-facebook'
 gem 'omniauth-twitter'
 gem 'haml', '~> 3.1.3'
@@ -58,3 +57,4 @@ gem 'sunspot_solr'
 gem 'share_counts'
 gem 'squeel'
 gem 'koala', '~> 1.3.0rc2'
+gem 'open_graph_helper'

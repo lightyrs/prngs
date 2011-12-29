@@ -44,11 +44,17 @@ header {
     float: left;
   }
 
-  .tweet-button {
+  .social-buttons {
     float: right;
+    position: relative;
+    top: 30px;
 
-    iframe {
-      margin-bottom: -18px;
+    .tweet-button {
+      float: left;
+    }
+
+    .like-button {
+      float: left;
     }
   }
 }
@@ -89,6 +95,14 @@ table {
       font-size: 34px; 
       line-height: 37px;
     }
+
+    .social-buttons {
+      float: none;
+      clear: both;
+      padding: 10px 0 0;
+      margin-bottom: -10px;
+      top: 0;
+    }
   }
 
   nav { position: relative; }
@@ -105,10 +119,6 @@ table {
     h1 { 
       font-size: 34px; 
       line-height: 37px;
-      float: none;
-    }
-
-    .tweet-button {
       float: none;
     }
   }

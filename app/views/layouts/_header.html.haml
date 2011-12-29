@@ -1,5 +1,7 @@
 %header
   = render "layouts/heading"
-  .tweet-button= tweet_button
+  .social-buttons
+    .tweet-button= tweet_button
+    .like-button= fb_like(APP_URL, :width => 110, :layout => "button_count")
 
 %hr.large

@@ -30,8 +30,15 @@ hr.large {
 	margin: 50px 0 30px;
 }
 
-.current-user {
-  font-size: 14px;
-  font-weight: bold;
-  color: #181818;
+.session {
+
+  .current-user {
+    font-size: 14px;
+    font-weight: bold;
+    color: #181818;
+  }
+
+  .authentications {
+    padding: 15px 0;
+  }
 }
