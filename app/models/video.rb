@@ -20,13 +20,6 @@ class Video < ActiveRecord::Base
     Video.joins{mentions.authors}.where{mentions.authors.id == author.id}.popular_from_last(age)
   }
 
-  auto_html_for :url do
-    html_escape
-    youtube
-    vimeo
-    simple_format
-  end
-
   searchable do
     text :title
   end

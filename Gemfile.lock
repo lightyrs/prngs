@@ -71,9 +71,6 @@ GEM
       tins (~> 0.3)
     ansi (1.4.1)
     arel (2.2.1)
-    auto_html (1.5.0)
-      redcarpet (~> 2.0.0)
-      rinku (~> 1.5.0)
     bcrypt-ruby (3.0.1)
     builder (3.0.0)
     chronic (0.6.6)
@@ -233,12 +230,10 @@ GEM
       oauth (>= 0.3.0)
     rdoc (3.11)
       json (~> 1.4)
-    redcarpet (2.0.1)
     redis (2.2.2)
     responders (0.6.4)
     rest-client (1.6.7)
       mime-types (>= 1.16)
-    rinku (1.5.0)
     rsolr (1.0.6)
       builder (>= 2.1.2)
     ruby_parser (2.3.1)
@@ -315,7 +310,6 @@ DEPENDENCIES
   activeadmin
   amatch
   andand!
-  auto_html
   coffee-rails (~> 3.1.1)
   colored
   erb2haml
