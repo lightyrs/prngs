@@ -7,8 +7,8 @@ class SessionsController < ApplicationController
     user = auth.user
     session[:user_id] = user.id
     session[:provider] = auth.provider
-    current_user ? @notice = "Connected with #{auth.provider}" : "Logged In"
-    redirect_to root_url, notice: @notice
+    current_user ? @notice = "Connected with #{auth.provider.capitalize}" : "Logged In"
+    redirect_to root_url, params => nil, notice: @notice
   end
 
   def destroy

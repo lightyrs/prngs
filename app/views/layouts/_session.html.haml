@@ -1,5 +1,6 @@
 .session
   - if current_user
+    .avatar= user_avatar(current_user)
     .current-user= current_user.name
     = link_to "Log Out", logout_path
     .authentications

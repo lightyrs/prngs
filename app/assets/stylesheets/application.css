@@ -7,4 +7,5 @@
  *= require skeleton/layout
  *= require skeleton/skeleton
  *= require_directory ./application
+ *= require bootstrap/bootstrap
 */
