@@ -2,19 +2,6 @@
 
 module ApplicationHelper
 
-  def flash_messages
-    unless flash.blank? or flash.nil?
-      output = ""
-      flash.each do |name, msg|
-        output += "<div class='alert-message flash #{name}'>
-          <a class='close' href='#'> ×</a>
-          <p><strong>#{name.capitalize}</strong> #{msg}</p>
-        #{javascript_include_tag 'application/flash.js'}</div>"
-      end
-      raw output
-    end
-  end
-
   include TweetButton
 
   TweetButton.default_tweet_button_options = {
@@ -23,20 +10,21 @@ module ApplicationHelper
     :count => "horizontal"
   }
 
+  def flash_messages
+    unless flash.blank? or flash.nil?
+      output = ""
+      flash.each do |name, msg|
+        output += "<div class='alert-message flash #{name}'>
+          <a class='close' href='#'> ×</a>
+          <p><strong>#{name.capitalize}</strong> #{msg}</p>
+        </div>"
+      end
+      raw output
+    end
+  end
+
   def body_class
     controller.controller_name || ""
-  end
-
-  def primary_nav
-    html = ""
-    SITE_SECTIONS.map do |section|
-      html += "<li><a href=#{nav_links(section)}>#{section}</a></li>"
-    end
-    html
-  end
-
-  def nav_links(section)
-    eval("#{section.downcase}_path")
   end
 
   def backbone_router(resource, collection)

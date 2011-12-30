@@ -6,12 +6,13 @@
     = stylesheet_link_tag    "application"
     = javascript_include_tag "application"
     = csrf_meta_tags
-  %body{ :class => body_class }
+  %body{:class => body_class}
     = render "shared/facebook_js_sdk"
-    .primary.container
-      .three.columns.sidebar
-        = render "layouts/sidebar"
-      .twelve.columns.offset-by-one.content
-        = render "layouts/header"
+    = render "layouts/top_bar"
+    .container-fluid
+      = render "layouts/side_bar"
+      .content
+        = render "layouts/hero_unit" if @first_time_visitor
         = flash_messages
         = yield
+        = render "layouts/footer"
