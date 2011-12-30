@@ -21,6 +21,8 @@ Prngs::Application.routes.draw do
 
   resources :videos
 
+  post "/search", to: "searches#search", :as => "search"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

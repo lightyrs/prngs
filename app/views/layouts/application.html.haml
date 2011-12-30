@@ -8,11 +8,13 @@
     = csrf_meta_tags
   %body{:class => body_class}
     = render "shared/facebook_js_sdk"
-    = render "layouts/top_bar"
-    .container-fluid
-      = render "layouts/side_bar"
+    .container
+      = flash_messages
       .content
-        = render "layouts/hero_unit" if @first_time_visitor
-        = flash_messages
-        = yield
-        = render "layouts/footer"
+        = render "layouts/header"
+        .row
+          = render "layouts/sidebar"
+          .span10
+            %h2= yield(:heading)
+            = yield
+      = render "layouts/footer"

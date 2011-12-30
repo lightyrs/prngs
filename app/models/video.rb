@@ -21,12 +21,23 @@ class Video < ActiveRecord::Base
   }
 
   searchable do
-    text :title
+    text    :title
+    integer :popularity
+    time    :created_at
   end
 
 
   def sources
     mentions.map(&:source)
+  end
+
+  def self.default_search(query)
+    Video.solr_search do
+      fulltext query
+      order_by :created_at, :desc
+      order_by :popularity, :desc
+      paginate :per_page => 20
+    end
   end
 
   def self.construct(mention, video)

@@ -1,7 +1,18 @@
-%header
-  = render "layouts/heading"
-  .social-buttons
-    .tweet-button= tweet_button
-    .like-button= fb_like(APP_URL, :width => 110, :layout => "button_count")
+.page-header
+  %h1
+    = link_to APP_NAME, root_path
 
-%hr.large
+  = render "layouts/search"
+
+  .sections
+    = link_to "Videos", videos_path
+    %span.separator
+      |
+    = link_to "Artists", artists_path
+    %span.separator
+      |
+    = link_to "Sources", sources_path
+
+  .session
+    = link_to truncate(current_user.name, :length => 28, :omission => ''), "#", :class => "btn" if current_user
+    = link_to "Connect an Account", "#", :class => "btn" unless current_user
