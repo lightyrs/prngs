@@ -5,13 +5,13 @@
   = render "layouts/search"
 
   .sections
-    = link_to "Videos", videos_path
+    = link_to "Sources", sources_path
     %span.separator
       |
     = link_to "Artists", artists_path
     %span.separator
       |
-    = link_to "Sources", sources_path
+    = link_to "Users", users_path
 
   .session
     = link_to truncate(current_user.name, :length => 28, :omission => ''), "#", :class => "btn" if current_user

@@ -1,0 +1,36 @@
+ul.media-list {
+  margin: 0 0 18px 0;
+  list-style: none;
+
+  li.video {
+    overflow: hidden;
+    padding-bottom: 10px;
+
+    a.thumbnail {
+      display: block;
+      float: left;
+    }
+
+    img.thumbnail {
+      width: 160px;
+      height: 90px;
+    }
+
+    .meta {
+      float: left;
+      width: 370px;
+      padding: 3px 15px;
+
+      h3 {
+        font-size: 14px;
+        line-height: 18px;
+      }
+
+      p {
+        padding: 2px 0;
+        font-size: 12px;
+        line-height: 16px;
+      }
+    }
+  }
+}

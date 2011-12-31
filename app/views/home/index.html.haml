@@ -1,8 +1,5 @@
-- content_for :heading do
-  %h1 Music Video
-
 .featured-video
   = render @featured_video
 
-.popular.this-week
+%ul.media-list.popular.this-week
   = render :collection => @popular_this_week, :as => :video, :partial => "videos/thumb"

@@ -11,7 +11,7 @@ module ApplicationHelper
   }
 
   def flash_messages
-    unless flash.blank? or flash.nil?
+    if flash.present?
       output = ""
       flash.each do |name, msg|
         output += "<div class='alert-message flash #{name}' data-alert='#{name}'>

@@ -6,10 +6,14 @@ Prngs::Application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
 
   match "/login", to: "sessions#new", :as => "login"
+  match "/logout", to: "sessions#destroy", :as => "logout"
+
   match "/auth/:provider/callback", to: "sessions#create"
   match "/auth/failure", to: "sessions#failure"
-  match "/logout", to: "sessions#destroy", :as => "logout"
+
   post "/deauth/:provider", to: "users#deauth", :as => "deauth"
+
+  resources :users
 
   resources :authors
 

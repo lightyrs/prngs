@@ -2,116 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="deb773b9-a826-4815-915b-f39e5ec1d692" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/controllers/searches_controller.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/layouts/_search.html.haml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/layouts/_sidebar.html.haml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/searches/search.html.haml" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/views/layouts/_heading.html.haml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/views/layouts/_hero_unit.html.haml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/views/layouts/_side_bar.html.haml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/views/layouts/_top_bar.html.haml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/solr/data/development/index/_a.fdt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/solr/data/development/index/_a.fdx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/solr/data/development/index/_a.fnm" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/solr/data/development/index/_a.frq" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/solr/data/development/index/_a.nrm" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/solr/data/development/index/_a.prx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/solr/data/development/index/_a.tii" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/solr/data/development/index/_a.tis" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/solr/data/development/index/_a_1.del" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/solr/data/development/index/_b.fdt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/solr/data/development/index/_b.fdx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/solr/data/development/index/_b.fnm" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/solr/data/development/index/_b.frq" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/solr/data/development/index/_b.nrm" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/solr/data/development/index/_b.prx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/solr/data/development/index/_b.tii" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/solr/data/development/index/_b.tis" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/solr/data/development/index/_b_1.del" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/solr/data/development/index/_c.fdt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/solr/data/development/index/_c.fdx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/solr/data/development/index/_c.fnm" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/solr/data/development/index/_c.frq" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/solr/data/development/index/_c.nrm" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/solr/data/development/index/_c.prx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/solr/data/development/index/_c.tii" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/solr/data/development/index/_c.tis" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/solr/data/development/index/_c_1.del" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/solr/data/development/index/_d.fdt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/solr/data/development/index/_d.fdx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/solr/data/development/index/_d.fnm" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/solr/data/development/index/_d.frq" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/solr/data/development/index/_d.nrm" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/solr/data/development/index/_d.prx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/solr/data/development/index/_d.tii" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/solr/data/development/index/_d.tis" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/solr/data/development/index/_d_1.del" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/solr/data/development/index/_e.fdt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/solr/data/development/index/_e.fdx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/solr/data/development/index/_e.fnm" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/solr/data/development/index/_e.frq" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/solr/data/development/index/_e.nrm" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/solr/data/development/index/_e.prx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/solr/data/development/index/_e.tii" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/solr/data/development/index/_e.tis" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/solr/data/development/index/_e_1.del" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/solr/data/development/index/_f.fdt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/solr/data/development/index/_f.fdx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/solr/data/development/index/_f.fnm" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/solr/data/development/index/_f.frq" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/solr/data/development/index/_f.nrm" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/solr/data/development/index/_f.prx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/solr/data/development/index/_f.tii" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/solr/data/development/index/_f.tis" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/solr/data/development/index/_f_1.del" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/solr/data/development/index/_g.fdt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/solr/data/development/index/_g.fdx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/solr/data/development/index/_g.fnm" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/solr/data/development/index/_g.frq" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/solr/data/development/index/_g.nrm" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/solr/data/development/index/_g.prx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/solr/data/development/index/_g.tii" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/solr/data/development/index/_g.tis" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/solr/data/development/index/_g_2.del" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/solr/data/development/index/_h.fdt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/solr/data/development/index/_h.fdx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/solr/data/development/index/_h.fnm" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/solr/data/development/index/_h.frq" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/solr/data/development/index/_h.nrm" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/solr/data/development/index/_h.prx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/solr/data/development/index/_h.tii" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/solr/data/development/index/_h.tis" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/solr/data/development/index/_h_2.del" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/solr/data/development/index/_i.fdt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/solr/data/development/index/_i.fdx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/solr/data/development/index/_i.fnm" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/solr/data/development/index/_i.frq" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/solr/data/development/index/_i.nrm" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/solr/data/development/index/_i.prx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/solr/data/development/index/_i.tii" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/solr/data/development/index/_i.tis" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/solr/data/development/index/_i_1.del" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/solr/data/development/index/_j.fdt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/solr/data/development/index/_j.fdx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/solr/data/development/index/segments_k" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/.generators" afterPath="$PROJECT_DIR$/.idea/.generators" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/stylesheets/application/videos.css.scss" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/solr/data/development/index/segments_o" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/prngs.iml" afterPath="$PROJECT_DIR$/.idea/prngs.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/solr/data/development/index/segments.gen" afterPath="$PROJECT_DIR$/solr/data/development/index/segments.gen" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/solr/pids/development/sunspot-solr-development.pid" afterPath="$PROJECT_DIR$/solr/pids/development/sunspot-solr-development.pid" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gemfile.lock" afterPath="$PROJECT_DIR$/Gemfile.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gemfile" afterPath="$PROJECT_DIR$/Gemfile" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/stylesheets/application/home.css.scss" afterPath="$PROJECT_DIR$/app/assets/stylesheets/application/home.css.scss" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/stylesheets/application/styleguide.css.scss" afterPath="$PROJECT_DIR$/app/assets/stylesheets/application/styleguide.css.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/home_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/home_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/videos_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/videos_controller.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/helpers/application_helper.rb" afterPath="$PROJECT_DIR$/app/helpers/application_helper.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/artist.rb" afterPath="$PROJECT_DIR$/app/models/artist.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/source.rb" afterPath="$PROJECT_DIR$/app/models/source.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/video.rb" afterPath="$PROJECT_DIR$/app/models/video.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/home/index.html.haml" afterPath="$PROJECT_DIR$/app/views/home/index.html.haml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/layouts/_header.html.haml" afterPath="$PROJECT_DIR$/app/views/layouts/_header.html.haml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/layouts/application.html.haml" afterPath="$PROJECT_DIR$/app/views/layouts/application.html.haml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config.ru" afterPath="$PROJECT_DIR$/config.ru" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/environment.rb" afterPath="$PROJECT_DIR$/config/environment.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/videos/_thumb.html.haml" afterPath="$PROJECT_DIR$/app/views/videos/_thumb.html.haml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/videos/_video.html.haml" afterPath="$PROJECT_DIR$/app/views/videos/_video.html.haml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/routes.rb" afterPath="$PROJECT_DIR$/config/routes.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/seeds.rb" afterPath="$PROJECT_DIR$/db/seeds.rb" />
     </list>
     <ignored path="prngs.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -133,17 +39,7 @@
     <favorites_list name="prngs" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="_header.html.haml" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/views/layouts/_header.html.haml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="33" selection-start="420" selection-end="420" vertical-scroll-proportion="0.38046795">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FindManager">
     <FindUsagesManager>
@@ -160,22 +56,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/app/controllers/videos_controller.rb" />
-        <option value="$PROJECT_DIR$/config/routes.rb" />
-        <option value="$PROJECT_DIR$/app/models/video.rb" />
-        <option value="$PROJECT_DIR$/app/models/artist.rb" />
-        <option value="$PROJECT_DIR$/app/models/source.rb" />
-        <option value="$PROJECT_DIR$/app/controllers/searches_controller.rb" />
-        <option value="$PROJECT_DIR$/app/views/layouts/_footer.html.haml" />
-        <option value="$PROJECT_DIR$/app/views/layouts/_side_bar.html.haml" />
-        <option value="$PROJECT_DIR$/app/controllers/home_controller.rb" />
-        <option value="$PROJECT_DIR$/app/views/layouts/application.html.haml" />
-        <option value="$PROJECT_DIR$/config/initializers/omniauth.rb" />
-        <option value="$PROJECT_DIR$/app/helpers/application_helper.rb" />
-        <option value="$PROJECT_DIR$/app/assets/stylesheets/application/styleguide.css.scss" />
-        <option value="$PROJECT_DIR$/app/views/layouts/_search.html.haml" />
-        <option value="$PROJECT_DIR$/app/views/layouts/_sidebar.html.haml" />
+        <option value="$PROJECT_DIR$/app/helpers/users_helper.rb" />
+        <option value="$PROJECT_DIR$/db/migrate/20111230020936_create_video_groups.rb" />
         <option value="$PROJECT_DIR$/app/views/layouts/_header.html.haml" />
+        <option value="$PROJECT_DIR$/config/routes.rb" />
+        <option value="$PROJECT_DIR$/app/controllers/sessions_controller.rb" />
+        <option value="$PROJECT_DIR$/app/helpers/application_helper.rb" />
+        <option value="$PROJECT_DIR$/app/views/videos/_grid.html.haml" />
+        <option value="$PROJECT_DIR$/app/views/videos/_video.html.haml" />
+        <option value="$PROJECT_DIR$/app/assets/stylesheets/application/home.css.scss" />
+        <option value="$PROJECT_DIR$/app/assets/stylesheets/application/styleguide.css.scss" />
+        <option value="$PROJECT_DIR$/app/assets/stylesheets/application/videos.css.scss" />
+        <option value="$PROJECT_DIR$/config/initializers/will_paginate.rb" />
+        <option value="$PROJECT_DIR$/app/views/home/index.html.haml" />
+        <option value="$PROJECT_DIR$/app/views/videos/_thumb.html.haml" />
+        <option value="$PROJECT_DIR$/Gemfile" />
+        <option value="$PROJECT_DIR$/app/controllers/home_controller.rb" />
       </list>
     </option>
   </component>
@@ -221,7 +117,9 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="Favorites" />
+      <pane id="RailsProjectView" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -471,10 +369,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="searches" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -740,20 +634,36 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="prngs" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="prngs" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="admin" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="RailsProjectView" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="options.lastSelected" value="org.jetbrains.plugins.ruby.settings.RubyIdeSdkConfigurable" />
+    <property name="options.lastSelected" value="reference.settingsdialog.IDE.editor.colors.Font" />
     <property name="recentsLimit" value="5" />
     <property name="RakeTaksPopup.undocumentedIncluded" value="true" />
     <property name="RailsGeneratorsPopup.hiddenIncluded" value="false" />
@@ -968,6 +878,7 @@
       <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="DRB" VALUE="false" />
       <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="CUCUMBER_RUNNER_PATH" VALUE="" />
       <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="USE_CUSTOM_RUNNER" VALUE="false" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="SETTINGS_VERSION" VALUE="2" />
       <method />
     </configuration>
     <configuration default="true" type="TestUnitRunConfigurationType" factoryName="Test::Unit/Shoulda">
@@ -1125,21 +1036,21 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="22" width="1920" height="1054" extended-state="0" />
+    <frame x="0" y="22" width="1366" height="742" extended-state="0" />
     <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3264095" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2203125" sideWeight="0.6735905" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2203514" sideWeight="0.6735905" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32195845" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3264095" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33382788" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
@@ -1189,114 +1100,101 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/app/helpers/videos_helper.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="142" selection-start="444" selection-end="444" vertical-scroll-proportion="0.2085308" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/layouts/_session.html.haml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="25" selection-start="130" selection-end="130" vertical-scroll-proportion="0.13622291" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.haml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="26" selection-start="455" selection-end="455" vertical-scroll-proportion="0.4170616" />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/config/routes.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="13" selection-start="148" selection-end="148" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/video.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="19" selection-start="859" selection-end="859" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/artist.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="19" selection-start="438" selection-end="438" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/source.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="19" selection-start="391" selection-end="391" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/searches/search.html.haml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.rvm/gems/ruby-1.9.2-p180/gems/activeadmin-0.3.4/app/assets/stylesheets/active_admin/components/_flash_messages.css.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+        <state line="22" column="39" selection-start="520" selection-end="520" vertical-scroll-proportion="0.74922603">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/helpers/application_helper.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="78" selection-start="383" selection-end="383" vertical-scroll-proportion="0.3628866">
+        <state line="13" column="21" selection-start="238" selection-end="238" vertical-scroll-proportion="0.13902053">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/initializers/omniauth.rb">
+    <entry file="file://$PROJECT_DIR$/app/controllers/sessions_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="110" selection-start="171" selection-end="171" vertical-scroll-proportion="0.022380468">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/layouts/_search.html.haml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="67" selection-start="105" selection-end="105" vertical-scroll-proportion="0.044760935">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/application/styleguide.css.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="46" column="23" selection-start="5373" selection-end="5373" vertical-scroll-proportion="0.9072165">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.haml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="31" selection-start="563" selection-end="563" vertical-scroll-proportion="0.38046795">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/home_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="11" selection-start="59" selection-end="59" vertical-scroll-proportion="0.044760935">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/layouts/_sidebar.html.haml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="11" selection-start="447" selection-end="447" vertical-scroll-proportion="0.5818922">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/layouts/_footer.html.haml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="14" selection-start="38" selection-end="38" vertical-scroll-proportion="0.067141406">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/searches_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="13" selection-start="361" selection-end="361" vertical-scroll-proportion="0.22380468">
+        <state line="21" column="3" selection-start="594" selection-end="594" vertical-scroll-proportion="0.71517026">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/layouts/_header.html.haml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="33" selection-start="420" selection-end="420" vertical-scroll-proportion="0.38046795">
+        <state line="16" column="40" selection-start="313" selection-end="345" vertical-scroll-proportion="0.5742251">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Gemfile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="59" column="13" selection-start="1201" selection-end="1201" vertical-scroll-proportion="0.82428116">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/home_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="4" selection-start="64" selection-end="64" vertical-scroll-proportion="0.10543131">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/application/videos.css.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="16" selection-start="321" selection-end="321" vertical-scroll-proportion="0.6134185">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/videos/_thumb.html.haml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="62" selection-start="232" selection-end="232" vertical-scroll-proportion="0.13902053">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/application/styleguide.css.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="27" column="20" selection-start="5050" selection-end="5050" vertical-scroll-proportion="0.12164297">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/application/home.css.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="24" selection-start="55" selection-end="55" vertical-scroll-proportion="0.10216718">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/videos/_video.html.haml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="13" selection-start="13" selection-end="13" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/home/index.html.haml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="11" selection-start="88" selection-end="88" vertical-scroll-proportion="0.13622291">
           <folding />
         </state>
       </provider>
