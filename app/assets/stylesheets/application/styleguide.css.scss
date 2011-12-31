@@ -9,6 +9,12 @@ body {
     padding: 0 5px 25px 5px;
 
     > .content {
+      padding-bottom: 14px;
+      margin-bottom: 7px;
+      border-bottom: 1px solid #DDD;
+      -webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+      -moz-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+      box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
 
       > .row {
         clear: both;
@@ -20,6 +26,13 @@ body {
         h1 {
           float: left;
           line-height: 65px;
+
+          a {
+
+            &:hover {
+              text-decoration: none;
+            }
+          }
         }
 
         form {
@@ -47,6 +60,57 @@ body {
         .session {
           float: right;
           line-height: 65px;
+        }
+      }
+
+      .sidebar {
+
+        .module {
+          padding-bottom: 14px;
+          margin-bottom: 7px;
+          border-bottom: 1px solid #DDD;
+          -webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+          -moz-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+          box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+        }
+
+        .session {
+
+          .avatar {
+            width: 50px;
+            height: 50px;
+            float: left;
+            margin-right: 8px;
+            padding: 3px 3px 3px 0;
+          }
+
+          .current-user {
+            font-weight: bold;
+          }
+
+          .authentications {
+            padding-top: 1px;
+
+            span {
+              padding-left: 5px;
+            }
+          }
+        }
+
+        ul {
+          margin: 0 0 7px 0;
+          list-style: none;
+
+          &.last-child {
+            margin: 0;
+          }
+
+          li {
+
+            h5 {
+              line-height: 28px;
+            }
+          }
         }
       }
     }

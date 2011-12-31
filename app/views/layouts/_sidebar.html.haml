@@ -1,32 +1,15 @@
-.span4
+.span4.sidebar
   = render "layouts/session"
-  %h5 Sources
-  %ul
-    %li
-      %a{:href => "#"} Link
-    %li
-      %a{:href => "#"} Link
-    %li
-      %a{:href => "#"} Link
-    %li
-      %a{:href => "#"} Link
-  %h5 Artists
-  %ul
-    %li
-      %a{:href => "#"} Link
-    %li
-      %a{:href => "#"} Link
-    %li
-      %a{:href => "#"} Link
-    %li
-      %a{:href => "#"} Link
-    %li
-      %a{:href => "#"} Link
-    %li
-      %a{:href => "#"} Link
-  %h5 Users
-  %ul
-    %li
-      %a{:href => "#"} Link
-    %li
-      %a{:href => "#"} Link
+  %nav.sections.module
+    %h5 Sources
+    %ul
+      - @suggested.sources.each do |source|
+        %li= link_to source.name, source_path(source)
+    %h5 Artists
+    %ul
+      - @suggested.artists.each do |artist|
+        %li= link_to artist.name, artist_path(artist)
+    %h5 Users
+    %ul.last-child
+      - @suggested.users.each do |user|
+        %li= link_to user.name, user_path(user)

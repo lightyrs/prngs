@@ -1,10 +1,12 @@
+# encoding: utf-8
+
 module UsersHelper
 
   def connection_status(provider, current_user)
     if current_user.authentications.map(&:provider).include? provider
-      "Connected with #{provider.capitalize}"
+      "#{provider.capitalize}<span>✔</span>".html_safe
     else
-      "<a href='/auth/#{provider}'>Connect with #{provider.capitalize}</a>".html_safe
+      "<a href='/auth/#{provider}'>#{provider.capitalize}</a><span>✘</span>".html_safe
     end
   end
 
