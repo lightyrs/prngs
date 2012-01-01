@@ -1,0 +1,8 @@
+.session
+  = link_to truncate(current_user.name, :length => 28, :omission => ''), "#", :rel => "popover",
+  :'data-placement' => "below", :'data-original-title' => current_user.name, :class => "btn current-user" if current_user
+  = link_to "Connect an Account", "#", :rel => "popover", :'data-placement' => "below",
+  :'data-original-title' => "Connect an Account", :class => "btn" unless current_user
+
+  .popover-content.session
+    = render "shared/session"

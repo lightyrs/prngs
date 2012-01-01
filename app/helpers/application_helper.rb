@@ -17,7 +17,7 @@ module ApplicationHelper
         output += "<div class='alert-message flash #{name}' data-alert='#{name}'>
           <a class='close' href='#'> ×</a>
           <p><strong>#{name.capitalize}</strong> #{msg}</p>
-        </div>"
+        </div>#{ javascript_include_tag "application/flash" }"
       end
       raw output
     end

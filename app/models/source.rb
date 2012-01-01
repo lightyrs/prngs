@@ -20,6 +20,18 @@ class Source < ActiveRecord::Base
   end
 
 
+  def videos
+    mentions.map(&:video).compact.uniq
+  end
+
+  def relevance
+    popularity.to_i + (videos.count*5)
+  end
+
+  def self.most_relevant
+    Source.all.delete_if{|s| s.relevance == 0}.sort_by(&:relevance).reverse
+  end
+
   def self.default_search(query)
     Source.solr_search do
       fulltext query

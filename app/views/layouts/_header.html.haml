@@ -2,17 +2,7 @@
   %h1
     = link_to APP_NAME, root_path
 
-  = render "layouts/search"
+  = render "shared/search"
+  = render "layouts/header/nav/sections"
+  = render "shared/session_button"
 
-  %nav.sections
-    = link_to "Sources", sources_path
-    %span.separator
-      |
-    = link_to "Artists", artists_path
-    %span.separator
-      |
-    = link_to "Users", users_path
-
-  .session
-    = link_to truncate(current_user.name, :length => 28, :omission => ''), "#", :class => "btn" if current_user
-    = link_to "Connect an Account", "#", :class => "btn" unless current_user

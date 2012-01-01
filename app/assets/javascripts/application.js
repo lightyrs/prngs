@@ -11,4 +11,7 @@
 //= require backbone_rails_sync
 //= require backbone_datalink
 //= require backbone/prngs
-//= require bootstrap
+//= require bootstrap-twipsy
+//= require bootstrap-popover
+//= require_directory ./vendor
+//= require application/popover

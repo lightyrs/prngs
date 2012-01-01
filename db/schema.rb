@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111229091646) do
+ActiveRecord::Schema.define(:version => 20120101015431) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.integer  "resource_id",   :null => false
@@ -122,6 +122,11 @@ ActiveRecord::Schema.define(:version => 20111229091646) do
     t.string   "twitter_handle"
     t.string   "facebook_link"
     t.text     "twitter_avatar"
+  end
+
+  create_table "users_videos", :id => false, :force => true do |t|
+    t.integer "user_id"
+    t.integer "video_id"
   end
 
   create_table "videos", :force => true do |t|

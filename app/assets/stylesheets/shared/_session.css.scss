@@ -1,0 +1,70 @@
+.session {
+
+  &.popover-content {
+
+    .button.login {
+      margin: 0 auto;
+    }
+
+    .current-user {
+      display: none;
+    }
+
+    .logout {
+      display: block;
+    }
+  }
+
+  .button.login {
+    display: block;
+    width: 150px;
+    height: 23px;
+    text-indent: -9999em;
+    text-align: left;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    background-position: 0 0;
+
+    &:hover {
+      background-position: 0 -24px;
+    }
+
+    &:active {
+      background-position: 0 -48px;
+    }
+
+    &.facebook {
+      background-image: image_url('/assets/buttons/login_facebook.png');
+    }
+
+    &.twitter {
+      margin-bottom: 7px;
+      background-image: image_url('/assets/buttons/login_twitter.png');
+    }
+  }
+
+  .avatar {
+    width: 50px;
+    height: 50px;
+    float: left;
+    margin-right: 8px;
+    padding: 3px 3px 3px 0;
+  }
+
+  .current-user {
+    font-weight: bold;
+  }
+
+  .authentications {
+    width: 140px;
+    padding-top: 1px;
+
+    span {
+      padding-left: 5px;
+    }
+  }
+
+  .logout {
+    display: none;
+  }
+}

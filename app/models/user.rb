@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
 
   has_many :authentications, :dependent => :destroy
+  has_and_belongs_to_many :videos
 
   def twitter_link
     "http://twitter.com/#{twitter_handle}"
