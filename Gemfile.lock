@@ -1,4 +1,10 @@
 GIT
+  remote: git://github.com/elchbenny/rails3-jquery-autocomplete.git
+  revision: e01b4d36535d058b302ed20f9f231ebf35bebf3a
+  specs:
+    rails3-jquery-autocomplete (0.5.0)
+
+GIT
   remote: http://github.com/pch/lastfm-client.git
   revision: 39c4792783f397fb8688e27909ac509a715b8312
   specs:
@@ -340,6 +346,7 @@ DEPENDENCIES
   progress_bar
   rails (= 3.1.3)
   rails-backbone
+  rails3-jquery-autocomplete!
   rdio
   sass-rails (~> 3.1.5)
   seed_dump

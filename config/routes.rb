@@ -23,7 +23,9 @@ Prngs::Application.routes.draw do
 
   resources :artists
 
-  resources :videos
+  resources :videos do
+    get :autocomplete_video_and_sources_and_artists_search, :on => :collection
+  end
 
   post "/search", to: "searches#search", :as => "search"
 
