@@ -19,11 +19,23 @@ $(document).ready(function(){
     $(this).autocomplete({
       source: $(this).attr('data-autocomplete'),
       select: function(event, ui) {
-        $(this).val(ui.item.value);
-        if ($(this).attr('id_element')) {
-          $($(this).attr('id_element')).val(ui.item.id);
+        var item_id = ui.item.id;
+
+        if (item_id !== "000") {
+          $(this).val(ui.item.value);
+          if ($(this).attr('id_element')) {
+            $($(this).attr('id_element')).val(item_id);
+          }
         }
         return false;
+      },
+      open: function() {
+        $(this).siblings(".shadow-mask").first().show();
+        $(this).addClass("active");
+      },
+      close: function() {
+        $(this).siblings(".shadow-mask:visible").first().hide();
+        $(this).removeClass("active");
       }
     });
   });

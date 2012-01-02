@@ -8,7 +8,6 @@
 /.bundle
 /config/database.yml
 /config/initializers/credentials.rb
-/solr/data/*
 
 # Ignore the default SQLite database.
 /db/*.sqlite3
