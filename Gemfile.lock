@@ -99,7 +99,6 @@ GEM
       bcrypt-ruby (~> 3.0)
       orm_adapter (~> 0.0.3)
       warden (~> 1.1)
-    ejs (1.0.0)
     erb2haml (0.1.2)
       haml
       hpricot
@@ -224,10 +223,6 @@ GEM
       activesupport (= 3.1.3)
       bundler (~> 1.0)
       railties (= 3.1.3)
-    rails-backbone (0.5.5)
-      coffee-script (~> 2.2.0)
-      ejs (~> 1.0.0)
-      rails (~> 3.1.0)
     railties (3.1.3)
       actionpack (= 3.1.3)
       activesupport (= 3.1.3)
@@ -265,6 +260,8 @@ GEM
       redis
       rest-client
     songkickr (0.2.0)
+    spinjs-rails (0.0.2)
+      rails (>= 3.1)
     sprockets (2.0.3)
       hike (~> 1.2)
       rack (~> 1.0)
@@ -345,13 +342,13 @@ DEPENDENCIES
   open_graph_helper
   progress_bar
   rails (= 3.1.3)
-  rails-backbone
   rails3-jquery-autocomplete!
   rdio
   sass-rails (~> 3.1.5)
   seed_dump
   share_counts
   songkickr
+  spinjs-rails
   squeel
   sunspot_rails
   sunspot_solr

@@ -918,7 +918,7 @@
   <!-- example of registering a custom function parser 
   <valueSourceParser name="myfunc" class="com.mycompany.MyValueSourceParser" />
   -->
-  <!-- config for the admin interface -->
+  <!-- config for the admin collections -->
   <admin>
     <defaultQuery>solr</defaultQuery>
     <!-- configure a healthcheck file for servers behind a loadbalancer

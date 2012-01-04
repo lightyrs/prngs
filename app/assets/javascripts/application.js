@@ -7,12 +7,10 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery-ui
-//= require underscore
-//= require backbone
-//= require backbone_rails_sync
-//= require backbone_datalink
-//= require backbone/prngs
+//= require_directory ./jquery-ui
+//= require jquery.spin
 //= require bootstrap-twipsy
 //= require bootstrap-popover
+//= require bootstrap-buttons
 //= require_directory ./vendor
 //= require application/popover

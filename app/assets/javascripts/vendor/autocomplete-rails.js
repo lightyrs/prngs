@@ -1,42 +1,91 @@
-/*
-* Unobtrusive autocomplete
-*
-* To use it, you just have to include the HTML attribute autocomplete
-* with the autocomplete URL as the value
-*
-*   Example:
-*       <input type="text" data-autocomplete="/url/to/autocomplete">
-* 
-* Optionally, you can use a jQuery selector to specify a field that can
-* be updated with the element id whenever you find a matching value
-*
-*   Example:
-*       <input type="text" data-autocomplete="/url/to/autocomplete" id_element="#id_field">
-*/
+$.widget( "custom.catcomplete", $.ui.autocomplete, {
+  _response: function( content ) {
+    this._trigger( "complete" );
+		if ( !this.options.disabled && content && content.length ) {
+			content = this._normalize( content );
+			this._suggest( content );
+			this._trigger( "open" );
+		} else {
+			this.close();
+		}
+		this.pending--;
+		if ( !this.pending ) {
+			this.element.removeClass( "ui-autocomplete-loading" );
+		}
+	},
+
+  _renderMenu: function( ul, items ) {
+    var self = this,
+        currentCategory = "",
+        catCount = 0;
+    $.each( items, function( index, item ) {
+      if (item.hasOwnProperty('category')) {
+        if ( item.category != currentCategory ) {
+          if (catCount === 0) {
+            ul.append( "<li class='ui-autocomplete-category first'>" + item.category + "</li>" );
+          } else {
+            ul.append( "<li class='ui-autocomplete-category'>" + item.category + "</li>" );
+          }
+          currentCategory = item.category;
+          catCount += 1;
+        }
+      }
+      self._renderItem( ul, item );
+    });
+  },
+
+  _renderItem: function( ul, item) {
+    if (item.hasOwnProperty('link')) {
+      return $( "<li class='ui-autocomplete-link'></li>" )
+        .data( "item.autocomplete", item )
+        .html( item.link )
+        .appendTo( ul );
+    } else {
+      return $( "<li></li>" )
+        .data( "item.autocomplete", item )
+        .append( $( "<a></a>" ).text( item.label ) )
+        .appendTo( ul );
+    }
+  }
+});
 
 $(document).ready(function(){
   $('input[data-autocomplete]').live('focus', function(i){
-    $(this).autocomplete({
+    $(this).catcomplete({
       source: $(this).attr('data-autocomplete'),
+      search: function() {
+        $("#primary_search .loading").spin({
+          lines: 10, // The number of lines to draw
+          length: 3, // The length of each line
+          width: 2, // The line thickness
+          radius: 3, // The radius of the inner circle
+          color: '#0064CD', // #rgb or #rrggbb
+          speed: 1.2, // Rounds per second
+          trail: 80, // Afterglow percentage
+          shadow: false // Whether to render a shadow
+        });
+      },
+      complete: function() {
+        $("#primary_search .loading").spin(false);
+      },
       select: function(event, ui) {
-        var item_id = ui.item.id;
+        if (ui.item.hasOwnProperty('link')) {
+          $(this).parents("form").submit();
+        } else {
+          var item_id = ui.item.id;
 
-        if (item_id !== "000") {
           $(this).val(ui.item.value);
           if ($(this).attr('id_element')) {
             $($(this).attr('id_element')).val(item_id);
           }
+          return false;
         }
-        return false;
       },
-      open: function() {
-        $(this).siblings(".shadow-mask").first().show();
-        $(this).addClass("active");
-      },
-      close: function() {
-        $(this).siblings(".shadow-mask:visible").first().hide();
-        $(this).removeClass("active");
-      }
+      html: true,
+      autoFocus: true,
+      minLength: 2
     });
   });
+
+  $("#primary_search input[data-autocomplete]").focus();
 });
