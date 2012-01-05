@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120101015431) do
+ActiveRecord::Schema.define(:version => 20120105001512) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.integer  "resource_id",   :null => false
@@ -147,6 +147,7 @@ ActiveRecord::Schema.define(:version => 20120101015431) do
     t.integer  "popularity"
   end
 
+  add_index "videos", ["title"], :name => "index_videos_on_title", :unique => true
   add_index "videos", ["url"], :name => "index_videos_on_url", :unique => true
 
 end

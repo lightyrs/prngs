@@ -7,6 +7,7 @@ class Video < ActiveRecord::Base
   validates_presence_of :url
   validates_presence_of :video_id
   validates_uniqueness_of :video_id
+  validates_uniqueness_of :title
 
   include NamedScopes::DateTime
   include NamedScopes::Popularity

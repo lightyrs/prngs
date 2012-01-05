@@ -1,5 +1,5 @@
 %li.video
-  = link_to image_tag(video.thumbnail_large, :alt => video.title, :class => "thumbnail"), video_path(video), :class => "thumbnail"
+  = link_to image_tag(video.thumbnail_small, :alt => video.title, :class => "thumbnail"), video_path(video), :class => "thumbnail"
   .meta
     %h3= video.title
     %p.description= truncate(video.description, :length => 108, :omission => '...')
