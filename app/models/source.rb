@@ -25,7 +25,7 @@ class Source < ActiveRecord::Base
   end
 
   def relevance
-    popularity.to_i + (videos.count*5)
+    videos.count > 0 ? popularity.to_i + (videos.count*10) : 0
   end
 
   def self.most_relevant

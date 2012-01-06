@@ -18,6 +18,4 @@ class ApplicationController < ActionController::Base
       :users => User.select([:id, :name]).includes([:videos]).first(5)
     })
   end
-
-
 end

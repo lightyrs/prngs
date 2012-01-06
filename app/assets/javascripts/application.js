@@ -13,4 +13,6 @@
 //= require bootstrap-popover
 //= require bootstrap-buttons
 //= require_directory ./vendor
+//= require application/prngs
+//= require application/flash
 //= require application/popover

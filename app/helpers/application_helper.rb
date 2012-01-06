@@ -26,4 +26,23 @@ module ApplicationHelper
       raw output
     end
   end
+
+  def ajax_render(el, target)
+    script = <<-eos
+      <script>
+        $(function() {
+          $('.pagination span a').live('ajax:beforeSend', function(event, xhr, settings){
+            xhr.setRequestHeader('accept', 'text/html');
+          });
+          $('#{el}').live('ajax:beforeSend', function(xhr, settings) {
+            var $target = $(xhr.target);
+            $target.css("color", "transparent").spin(Prngs.opts.spinner);
+          }).live('ajax:success', function(evt, data, status, xhr) {
+            $('#{target}').replaceWith(data);
+          });
+        });
+      </script>
+    eos
+    script.html_safe
+  end
 end

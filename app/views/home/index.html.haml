@@ -1,7 +1,4 @@
 .featured-videos
   = render @featured_video
 
-%ul.media-list.popular.today
-  = render :collection => @popular_today, :as => :video, :partial => "videos/thumb"
-
-  = paginate @popular_today, :remote => true
+= render "home/videos"

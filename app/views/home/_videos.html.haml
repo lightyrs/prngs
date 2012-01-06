@@ -1,0 +1,6 @@
+%ul.media-list.popular.today
+  = render :collection => @popular_today, :as => :video, :partial => "videos/thumb"
+
+  = paginate @popular_today, :remote => true, :id => "pagination"
+
+  = ajax_render(".pagination", "ul.media-list.popular.today")
