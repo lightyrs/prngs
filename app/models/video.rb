@@ -30,7 +30,7 @@ class Video < ActiveRecord::Base
 
 
   def sources
-    mentions.map(&:source)
+    mentions.map(&:source).sort_by(&:popularity)
   end
 
   def self.default_search(query)

@@ -1,10 +1,19 @@
 Rails3JQueryAutocomplete::Helpers.module_eval do
   def json_for_autocomplete(items, targets)
 
+    def class_name(item)
+      item.class.name.downcase
+    end
+
+    def link(item)
+      "#{class_name(item)}_url(#{item.id})"
+    end
+
     items = items.collect do |item|
       { "id" => item.id,
-        "label" => item.send( targets[ item.class.name.downcase.to_sym ][0] ),
-        "value" => item.send( targets[ item.class.name.downcase.to_sym ][0] ),
+        "label" => item.send( targets[ class_name(item).to_sym ][0] ),
+        "value" => item.send( targets[ class_name(item).to_sym ][0] ),
+        "url" => eval(link(item)),
         "category" => item.class.name.pluralize
       }
     end

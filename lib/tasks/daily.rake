@@ -1,5 +1,7 @@
 namespace :daily do
 
+  pid = Process.pid
+
   desc "Set timestamp"
   task :begin, [:scope] => :environment do |t,args|
     puts "\nSTART: #{Time.now}\n\n"
@@ -14,6 +16,7 @@ namespace :daily do
 
   desc "Set timestamp"
   task :init, [:scope] => :discover_video_popularity do |t,args|
+    `kill -9 #{pid}`
     puts "\nEND: #{Time.now}\n\n"
   end
 end

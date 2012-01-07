@@ -9,27 +9,73 @@ ul.media-list {
     a.thumbnail {
       display: block;
       float: left;
-    }
-
-    img.thumbnail {
+      overflow: hidden;
+      border: none;
       width: 160px;
       height: 90px;
+      position: relative;
+
+      &:hover {
+        height: 84px;
+        width: 154px;
+        border: 3px solid #0069D6;
+
+        img.thumbnail {
+          top: -18px;
+          left: -3px;
+        }
+      }
+
+      img.thumbnail {
+        width: 160px;
+        height: 120px;
+        position: absolute;
+        top: -15px;
+        left: 0;
+      }
     }
 
     .meta {
       float: left;
-      width: 370px;
-      padding: 3px 15px;
+      width: 520px;
+      height: 90px;
+      padding: 0 15px;
+      position: relative;
 
       h3 {
+        clear: both;
+        width: 370px;
         font-size: 14px;
         line-height: 18px;
+        padding: 5px 0;
+
+        a {
+
+          &:hover {
+            text-decoration: none;
+          }
+        }
       }
 
       p {
         padding: 2px 0;
         font-size: 12px;
         line-height: 16px;
+      }
+
+      .source {
+        display: block;
+        float: left;
+        margin-right: 4px;
+        cursor: pointer;
+
+        &:hover {
+          text-decoration: none;
+
+          span {
+            background-color: #00438A;
+          }
+        }
       }
     }
   }

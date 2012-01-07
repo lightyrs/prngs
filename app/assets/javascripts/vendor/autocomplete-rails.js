@@ -62,13 +62,8 @@ $(document).ready(function(){
       select: function(event, ui) {
         if (ui.item.hasOwnProperty('link')) {
           $(this).parents("form").submit();
-        } else {
-          var item_id = ui.item.id;
-
-          $(this).val(ui.item.value);
-          if ($(this).attr('id_element')) {
-            $($(this).attr('id_element')).val(item_id);
-          }
+        } else if (ui.item.hasOwnProperty('url')) {
+          window.location = ui.item.url;
           return false;
         }
       },

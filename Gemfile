@@ -14,6 +14,7 @@ group :development, :test do
   gem 'wirble'
   gem 'hirb'
   gem 'progress_bar'
+  gem 'itslog'
 end
 
 group :development do
