@@ -10,11 +10,10 @@
     = render "shared/facebook_js_sdk"
     .container
       = flash_messages
+      = render "shared/pjax_loader"
       .content
         = render "layouts/header"
         .row
           = render "layouts/sidebar"
-          .span12.main{:'data-fitvids' => 'true'}
-            %h2= yield(:heading)
-            = yield
+          = render "layouts/main"
       = render "layouts/footer"

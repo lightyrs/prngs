@@ -19,7 +19,7 @@ Rails3JQueryAutocomplete::Helpers.module_eval do
     end
 
     if items.length == 0
-      items
+      [{ "nothing" => "No Results Found" }]
     else
       all_results_link = { "link" => "<a href='#'>Show all results...</a>".html_safe }
       items.unshift(all_results_link)

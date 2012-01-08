@@ -51,6 +51,14 @@
     }
   }
 
+  .ui-autocomplete-nothing {
+    font-weight: bold;
+    color: #404040;
+    padding: 4px 5px 0 2px;
+    margin: 2px 7px 0;
+    clear: both;
+  }
+
   .ui-menu-item {
 
     a {

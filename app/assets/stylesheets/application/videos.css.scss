@@ -1,15 +1,22 @@
-body.videos > .container > .content .main {
+body.video.show .container > .content .main {
   width: 730px;
 }
 
 ul.media-list {
-  padding: 0 0 0 1px;
   margin: 0 0 18px 0;
   list-style: none;
 
   li.video {
     overflow: hidden;
     padding-bottom: 10px;
+    position: relative;
+
+    .loading {
+      position: absolute;
+      top: 35px;
+      left: 70px;
+      z-index: 50;
+    }
 
     a.thumbnail {
       display: block;

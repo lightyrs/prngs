@@ -1,5 +1,6 @@
-%li.video
+%li.video.thumb.entity
   = link_to image_tag(video.thumbnail_small, :alt => video.title, :class => "thumbnail"), video_path(video), :class => "thumbnail"
   .meta
     = source_links(video)
     %h3= link_to video.title, video_path(video)
+  .loading

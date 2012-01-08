@@ -8,12 +8,13 @@
 //= require jquery_ujs
 //= require jquery-ui
 //= require_directory ./jquery-ui
-//= require jquery.spin
 //= require bootstrap-twipsy
 //= require bootstrap-popover
 //= require bootstrap-buttons
 //= require bootstrap-tabs
 //= require bootstrap-dropdown
 //= require_directory ./vendor
+//= require pjax
+//= require jquery.spin
 //= require application/prngs
 //= require application/popover

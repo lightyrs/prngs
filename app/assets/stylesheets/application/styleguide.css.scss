@@ -122,3 +122,37 @@ body {
     }
   }
 }
+
+#pjax_loader {
+  height: 66px;
+  top: -67px;
+
+  .topbar-inner {
+    height: 66px;
+
+    .container {
+      height: 66px;
+      width: 970px;
+      padding: 0 5px;
+      overflow: hidden;
+
+      .loading {
+        padding: 12px 0 0;
+        float: left;
+        margin-bottom: 18px;
+        font-size: 30px;
+        line-height: 36px;
+        font-weight: bold;
+        color: #fff;
+
+        span {
+          top: 14px !important;
+
+          em {
+            padding: 0 0 0 4px;
+          }
+        }
+      }
+    }
+  }
+}

@@ -40,6 +40,11 @@ $.widget( "custom.catcomplete", $.ui.autocomplete, {
         .data( "item.autocomplete", item )
         .html( item.link )
         .appendTo( ul );
+    } else if (item.hasOwnProperty('nothing')) {
+      return $( "<li class='ui-autocomplete-nothing'></li>" )
+        .data( "item.autocomplete", item )
+        .html( item.nothing )
+        .appendTo( ul );
     } else {
       return $( "<li></li>" )
         .data( "item.autocomplete", item )
