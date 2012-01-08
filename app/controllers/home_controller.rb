@@ -3,8 +3,7 @@ class HomeController < ApplicationController
   respond_to :html, :js
 
   def index
-    @featured_video, *popular_today = *Video.from_last(1.day).top(50)
-    @popular_today = Kaminari.paginate_array(popular_today).page(params[:page]).per(10)
+    @popular_today = Kaminari.paginate_array(Video.popular_today.top(50)).page(params[:page]).per(10)
 
     respond_to do |format|
       format.html {

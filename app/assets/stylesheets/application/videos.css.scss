@@ -1,4 +1,9 @@
+body.videos > .container > .content .main {
+  width: 730px;
+}
+
 ul.media-list {
+  padding: 0 0 0 1px;
   margin: 0 0 18px 0;
   list-style: none;
 
@@ -37,14 +42,13 @@ ul.media-list {
 
     .meta {
       float: left;
-      width: 520px;
+      width: 359px;
       height: 90px;
       padding: 0 15px;
       position: relative;
 
       h3 {
         clear: both;
-        width: 370px;
         font-size: 14px;
         line-height: 18px;
         padding: 5px 0;

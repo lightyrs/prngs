@@ -12,6 +12,8 @@
 //= require bootstrap-twipsy
 //= require bootstrap-popover
 //= require bootstrap-buttons
+//= require bootstrap-tabs
+//= require bootstrap-dropdown
 //= require_directory ./vendor
 //= require application/prngs
 //= require application/popover

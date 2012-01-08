@@ -11,5 +11,17 @@ var Prngs = {
                trail: 70, // Afterglow percentage
                shadow: false // Whether to render a shadow
              }
+  },
+
+  init: function() {
+    Prngs.fitvids();
+  },
+
+  fitvids: function() {
+    $("[data-fitvids]").fitVids();
   }
 }
+
+$(function() {
+  Prngs.init();
+});

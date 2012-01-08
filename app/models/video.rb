@@ -22,6 +22,10 @@ class Video < ActiveRecord::Base
     Video.joins{mentions.authors}.where{mentions.authors.id == author.id}.popular_from_last(age)
   }
 
+  scope :popular_today, lambda {
+    Video.from_last(1.days).where{popularity > 0}
+  }
+
   searchable do
     text    :title
     integer :popularity
