@@ -47,6 +47,7 @@ var Prngs = {
       },
 
       show: function() {
+        $('input[data-autocomplete]').trigger("blur");
         $("#loader_mask").addClass("show").addClass("transition");
         $(Prngs.pjax.loader.variation())
           .css("top", $("body").scrollTop() + (0.35 * $(window).height()))

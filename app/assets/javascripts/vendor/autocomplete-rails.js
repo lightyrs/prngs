@@ -45,6 +45,11 @@ $.widget( "custom.catcomplete", $.ui.autocomplete, {
         .data( "item.autocomplete", item )
         .html( item.nothing )
         .appendTo( ul );
+    } else if (item.hasOwnProperty('url')) {
+      return $( "<li></li>" )
+        .data( "item.autocomplete", item )
+        .append( $( "<a href='" + item.url + "'></a>" ).text( item.label ) )
+        .appendTo( ul );
     } else {
       return $( "<li></li>" )
         .data( "item.autocomplete", item )
@@ -67,9 +72,6 @@ $(document).ready(function(){
       select: function(event, ui) {
         if (ui.item.hasOwnProperty('link')) {
           $(this).parents("form").submit();
-        } else if (ui.item.hasOwnProperty('url')) {
-          window.location = ui.item.url;
-          return false;
         }
       },
       html: true,
