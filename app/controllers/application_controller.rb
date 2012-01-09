@@ -4,11 +4,21 @@ class ApplicationController < ActionController::Base
   helper_method :current_user
 
   before_filter :suggested
+  before_filter :body_class
+  after_filter :set_pjax_headers
 
   private
 
   def current_user
     @current_user ||= User.find(session[:user_id]) if session[:user_id]
+  end
+
+  def body_class
+    @body_class ||= "#{params[:controller]} #{params[:action]}" || ""
+  end
+
+  def set_pjax_headers
+    response.headers['X-PJAX-CONTEXT'] = body_class
   end
 
   def suggested

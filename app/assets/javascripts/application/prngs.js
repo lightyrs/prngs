@@ -1,5 +1,9 @@
 var Prngs = {
 
+  init: function() {
+    Prngs.pjax.init();
+  },
+
   appName: "prngs",
 
   opts: {
@@ -27,34 +31,48 @@ var Prngs = {
         $.fn.transition = $.fn.animate;
       }
 
-      $('body')
-        .bind('pjax:start', function() {
-                Prngs.pjax.loader.show();
-              })
-        .bind('pjax:end', function() {
-                Prngs.pjax.loader.hide();
-              });
+      Prngs.pjax.loader.hide();
+
+      $(".span12.main").live('start.pjax', function() {
+        Prngs.pjax.loader.show();
+      });
+
+      $(".span12.main").live('end.pjax', function(xhr, options) {
+        $("body").attr("class", options.getResponseHeader('X-PJAX-CONTEXT'));
+        Prngs.pjax.loader.hide();
+      });
     },
 
     loader: {
 
-      dots: function() {
-        $("#pjax_loader .loading").Loadingdotdotdot({
-          "speed": 100,
-          "maxDots": 100,
-          "word": Prngs.appName
+      show: function() {
+        $(".span12.main").transition({
+          opacity: 0.0
+        }, 400);
+
+        $("#big_loader").spin({
+          lines: 10, // The number of lines to draw
+          length: 20, // The length of each line
+          width: 11, // The line thickness
+          radius: 23, // The radius of the inner circle
+          color: '#0069D6', // #rgb or #rrggbb
+          speed: 1.2, // Rounds per second
+          trail: 66, // Afterglow percentage
+          shadow: false // Whether to render a shadow
         });
       },
 
-      show: function() {
-        $("#pjax_loader").transition({ y: '67px' });
-        Prngs.pjax.loader.dots();
-      },
-
       hide: function() {
-        $("#pjax_loader").transition({ y: '-67px' });
-        Prngs.pjax.loader.dots('Stop');
+        $(".span12.main").transition({
+          opacity: 1.0
+        }, 400);
+
+        $("#big_loader").spin(false);
       }
     }
   }
 }
+
+$(function() {
+  Prngs.init();
+});

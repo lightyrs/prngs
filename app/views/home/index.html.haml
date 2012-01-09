@@ -1,4 +1,4 @@
-- content_for(:tabs) do
+= content_for_or_pjax :tabs do
   = render "shared/subnav/default"
 
 = render "home/videos"

@@ -10,10 +10,6 @@ module ApplicationHelper
     :count => "horizontal"
   }
 
-  def body_class
-    "#{controller.controller_name} #{controller.action_name}" || ""
-  end
-
   def flash_messages
     if flash.present?
       output = ""
@@ -25,5 +21,9 @@ module ApplicationHelper
       end
       raw output
     end
+  end
+
+  def content_for_or_pjax(name, &block)
+    request.headers['X-PJAX'] ? capture(&block) : content_for(name, &block)
   end
 end
