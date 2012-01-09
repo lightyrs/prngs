@@ -27,10 +27,6 @@ var Prngs = {
 
     init: function() {
 
-      if (!$.support.transition) {
-        $.fn.transition = $.fn.animate;
-      }
-
       Prngs.pjax.loader.hide();
 
       $(".span12.main").live('start.pjax', function() {
@@ -45,25 +41,24 @@ var Prngs = {
 
     loader: {
 
+      variation: function() {
+        var variations = $("#levitator, #cheerloader");
+        return variations[Math.floor(Math.random()*variations.length)]
+      },
+
       show: function() {
-
-        $(".span12.main").removeClass("transition");
-
-        $("#big_loader").spin({
-          lines: 10, // The number of lines to draw
-          length: 20, // The length of each line
-          width: 11, // The line thickness
-          radius: 23, // The radius of the inner circle
-          color: '#0069D6', // #rgb or #rrggbb
-          speed: 1.2, // Rounds per second
-          trail: 66, // Afterglow percentage
-          shadow: false // Whether to render a shadow
-        });
+        $("#loader_mask").addClass("show").addClass("transition");
+        $(Prngs.pjax.loader.variation())
+          .css("top", $("body").scrollTop() + (0.35 * $(window).height()))
+          .show();
       },
 
       hide: function() {
-        $(".span12.main").addClass("transition");
-        $("#big_loader").spin(false);
+        $("#loader_mask").removeClass("transition");
+        setTimeout(function() {
+          $("#loader_mask").removeClass("show");
+        }, 300);
+        $(".pjax-loader").hide();
       }
     }
   }

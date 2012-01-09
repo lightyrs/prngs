@@ -14,6 +14,23 @@ li.dropdown {
     font-weight: bold;
   }
 
+  &.open, &:hover {
+
+    a.dropdown-toggle {
+      background: rgba(0, 0, 0, 0.3);
+      color: white;
+      border: 1px solid #999;
+    }
+
+    a.menu:after, a.dropdown-toggle:after {
+      border-top-color: #555;
+    }
+
+    .dropdown-menu {
+      display: block;
+    }
+  }
+
   &.active {
 
     a.dropdown-toggle {
@@ -28,7 +45,7 @@ li.dropdown {
       }
     }
 
-    &.open {
+    &.open, &:hover {
 
       a.dropdown-toggle {
         background: rgba(0, 0, 0, 0.3);
