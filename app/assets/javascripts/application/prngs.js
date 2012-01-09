@@ -46,9 +46,8 @@ var Prngs = {
     loader: {
 
       show: function() {
-        $(".span12.main").transition({
-          opacity: 0.0
-        }, 400);
+
+        $(".span12.main").removeClass("transition");
 
         $("#big_loader").spin({
           lines: 10, // The number of lines to draw
@@ -63,10 +62,7 @@ var Prngs = {
       },
 
       hide: function() {
-        $(".span12.main").transition({
-          opacity: 1.0
-        }, 400);
-
+        $(".span12.main").addClass("transition");
         $("#big_loader").spin(false);
       }
     }

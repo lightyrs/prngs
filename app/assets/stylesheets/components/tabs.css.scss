@@ -10,6 +10,10 @@ ul.tabs {
 
 li.dropdown {
 
+  a.dropdown-toggle {
+    font-weight: bold;
+  }
+
   &.active {
 
     a.dropdown-toggle {
