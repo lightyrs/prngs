@@ -12,6 +12,6 @@ module UsersHelper
 
   def user_avatar(current_user)
     image_url = current_user.facebook_avatar || current_user.twitter_avatar
-    image_tag image_url, :alt => current_user.name
+    link_to image_tag(image_url, :alt => current_user.name), user_path(current_user)
   end
 end

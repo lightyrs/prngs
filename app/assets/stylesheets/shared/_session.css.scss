@@ -1,3 +1,16 @@
+body > .popover {
+
+  h3.title {
+    display: none;
+  }
+
+  div.content {
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+  }
+}
+
 .session {
 
   &.popover-content {
@@ -48,11 +61,44 @@
     height: 50px;
     float: left;
     margin-right: 8px;
-    padding: 3px 3px 3px 0;
+    padding: 0;
+    -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+    border: 1px solid white;
+    overflow: hidden;
+
+    &:hover {
+      border: 1px solid #0069D6;
+
+      a {
+        border: 1px solid white;
+        position: relative;
+        width: 48px;
+        overflow: hidden;
+        height: 48px;
+
+        img {
+          position: relative;
+          top: -1px;
+          left: -1px;
+        }
+      }
+    }
+    
+    a {
+      display: block;
+    }
   }
 
   .current-user {
     font-weight: bold;
+    
+    a {
+      &:hover {
+        text-decoration: none;
+      }
+    }
   }
 
   .authentications {

@@ -12,7 +12,7 @@ module VideosHelper
 
   def source_links(video)
     sources_html = ""
-    video.sources.first(3).each do |source|
+    video.sources.uniq.first(3).each do |source|
       sources_html += "<a href='#{source_path(source)}' class='source'><span class='label'>#{source.name}</span></a>"
     end
     sources_html.html_safe
