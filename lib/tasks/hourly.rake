@@ -1,7 +1,5 @@
 namespace :hourly do
 
-  pid = Process.pid
-
   desc "Set timestamp"
   task :begin, [:scope] => :environment do |t,args|
     puts "\nSTART: #{Time.now}\n\n"
@@ -34,7 +32,7 @@ namespace :hourly do
 
   desc "Set timestamp"
   task :init, [:scope] => :lasso_artists do |t,args|
-    `kill -9 #{pid}`
     puts "\nEND: #{Time.now}\n\n"
+    Process.exit!(true)
   end
 end

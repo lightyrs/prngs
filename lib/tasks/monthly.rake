@@ -1,7 +1,5 @@
 namespace :monthly do
 
-  pid = Process.pid
-
   desc "Set timestamp"
   task :timestamp, [:scope] => :environment do |t,args|
     Rails.logger.debug("START: #{Time.now}")
@@ -15,7 +13,7 @@ namespace :monthly do
 
   desc "Set timestamp"
   task :init, [:scope] => :discover_video_mentions do |t,args|
-    `kill -9 #{pid}`
     Rails.logger.debug("END: #{Time.now}")
+    Process.exit!(true)
   end
 end

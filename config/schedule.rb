@@ -1,3 +1,5 @@
+set :output, nil
+
 # Hourly Cron
 every :hour do
   rake "hourly:init"
