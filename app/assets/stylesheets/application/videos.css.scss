@@ -1,12 +1,8 @@
-body.videos.show .container > .content .main {
-  width: 730px;
-}
-
 ul.media-list {
   margin: 0 0 18px 0;
   list-style: none;
 
-  li.video {
+  li.video, li.mention {
     overflow: hidden;
     padding-bottom: 10px;
     position: relative;
@@ -29,24 +25,22 @@ ul.media-list {
       -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
       -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
       box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
-      border: 1px solid white;
+      border: 3px solid rgba(255, 255, 255, 0.6);
+      box-sizing: border-box;
+     *behavior: url(/assets/boxsizing.htc);
 
       &:hover, &.active {
-        height: 86px;
-        width: 156px;
         border: 3px solid #0069D6;
         -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3), inset 0px 0px 0px 1px rgba(255, 255, 255, 0.8);
         -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3), inset 0px 0px 0px 1px rgba(255, 255, 255, 0.8);
         box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3), inset 0px 0px 0px 1px rgba(255, 255, 255, 0.8);
 
-        img.thumbnail {
-          top: -17px;
-          left: -2px;
+        img {
           z-index: -1;
         }
       }
 
-      img.thumbnail {
+      img {
         width: 160px;
         height: 120px;
         position: absolute;
@@ -57,7 +51,7 @@ ul.media-list {
 
     .meta {
       float: left;
-      width: 359px;
+      width: 340px;
       height: 90px;
       padding: 0 15px;
       position: relative;

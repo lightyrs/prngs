@@ -32,4 +32,8 @@ class Mention < ActiveRecord::Base
       "Blogger"
     end
   end
+
+  def artists
+    video ? video.artists : []
+  end
 end

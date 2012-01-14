@@ -118,7 +118,15 @@ body {
       }
 
       .main {
-        width: 575px;
+        width: 730px;
+
+        h1 {
+          float: left;
+        }
+
+        ul.media-list {
+          float: right;
+        }
       }
     }
   }

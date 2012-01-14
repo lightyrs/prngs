@@ -1,0 +1,8 @@
+%li.span3.mention
+  .thumbnail
+    = link_to image_tag(mention.video.thumbnail_small, :alt => mention.video.title), video_path(mention.video), :class => "thumbnail"
+    .caption
+      %h5= Sanitize.clean(mention.title).html_safe
+      .content= clean_content(mention.text)
+      %p.buttons
+        = link_to "Watch Video", video_path(mention.video), :class => "btn primary"

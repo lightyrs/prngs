@@ -1,0 +1,29 @@
+.thumbnails {
+  margin-left: -20px;
+  margin-bottom: 0;
+  list-style: none;
+  zoom: 1;
+}
+.thumbnails:before, .thumbnails:after {
+  display: table;
+  *display: inline;
+  content: "";
+  zoom: 1;
+}
+.thumbnails:after {
+  clear: both;
+}
+.thumbnails > li {
+  float: left;
+  margin: 0 0 20px 20px;
+}
+
+a.thumbnail:hover {
+  border-color: #0088cc;
+  -webkit-box-shadow: 0 1px 4px rgba(0, 105, 214, 0.25);
+  -moz-box-shadow: 0 1px 4px rgba(0, 105, 214, 0.25);
+  box-shadow: 0 1px 4px rgba(0, 105, 214, 0.25);
+}
+.thumbnail .caption {
+  padding: 9px;
+}

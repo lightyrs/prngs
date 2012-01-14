@@ -1,3 +1,53 @@
-// Place all the styles related to the Mentions controller here.
-// They will automatically be included in application.css.scss.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+ul.media-list.mentions {
+  padding-left: 8px;
+
+  li.mention {
+    width: 188px;
+    border: 1px solid #DDD;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.75);
+    margin-bottom: 15px;
+    z-index: 0;
+    position: relative;
+  
+    > .thumbnail {
+      padding-top: 12px;
+  
+      h5 {
+        font-size: 13px;
+        line-height: 16px;
+        padding: 2px 0 8px 0;
+      } 
+      
+      a.thumbnail {
+        float: none;
+        margin: 0 auto;
+        overflow: hidden;
+      }
+
+      .caption {
+        padding: 9px 0 0;
+        margin: 0 auto;
+        width: 162px;
+
+        > .content {
+          font-size: 12px;
+        }
+
+        p.buttons {
+          margin: 5px auto 0;
+          width: 162px;
+          text-align: center;
+          padding: 5px 0;
+          
+          a.btn.primary {
+            padding: 5px 43px 6px;
+            margin: 0 auto;
+          }
+        }
+      }
+    }
+  }
+}
