@@ -1,5 +1,9 @@
 module VideosHelper
 
+  def duration(video)
+    Time.at(video.duration).gmtime.strftime('%M:%S').gsub(/\A00:/, "")
+  end
+
   def youtube_player(video)
     if video.provider.downcase == "youtube"
       "<iframe width='640' height='385' src='http://www.youtube.com/embed/#{video.video_id}?wmode=transparent' frameborder='0' allowfullscreen></iframe>".html_safe
