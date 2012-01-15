@@ -6,4 +6,6 @@
   .meta
     = source_links(video)
     %h3= link_to video.title, video_path(video)
+    .counts
+      %span.mentions-count= "Mentioned #{pluralize(video.mentions.count, 'time')}"
   .loading
