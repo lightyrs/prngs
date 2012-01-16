@@ -32,6 +32,6 @@ class ApplicationController < ActionController::Base
   end
 
   def mentions
-    @mentions = Mention.where{text.length > 5 && video_id != nil}.from_last(1.day).includes([:video]).random(3).uniq
+    @mentions = Mention.from_last(1.day).where{text.length > 5 && video_id != nil}.includes([:video]).random(3).uniq
   end
 end

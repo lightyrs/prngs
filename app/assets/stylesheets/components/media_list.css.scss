@@ -72,16 +72,25 @@ ul.media-list {
         -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
         -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
         box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
-        border: 3px solid rgba(255, 255, 255, 0.6);
+        border: 3px solid rgba(255, 255, 255, 0.8);
         box-sizing: border-box;
-       *behavior: url(/assets/boxsizing.htc);
+       *behavior: url(/assets/polyfills/boxsizing.htc);
   
         img {
           width: 163px;
+          max-width: none;
           height: 122px;
           position: absolute;
           top: -16px;
           left: -3px;
+          padding: 0;
+          border: 0 none;
+          -webkit-border-radius: 0;
+          -moz-border-radius: 0;
+          border-radius: 0;
+          -webkit-box-shadow: 0;
+          -moz-box-shadow: 0;
+          box-shadow: 0;
         }
 
         .duration {

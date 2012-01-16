@@ -60,7 +60,7 @@ body > .popover {
     width: 50px;
     height: 50px;
     float: left;
-    margin-right: 8px;
+    margin: 1px 8px 0 0;
     padding: 0;
     -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
     -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
@@ -88,6 +88,10 @@ body > .popover {
     
     a {
       display: block;
+
+      img {
+        max-width: none;
+      }
     }
   }
 
@@ -98,6 +102,13 @@ body > .popover {
       &:hover {
         text-decoration: none;
       }
+    }
+  }
+
+  .btn {
+
+    &.current-user {
+      font-weight: normal;
     }
   }
 

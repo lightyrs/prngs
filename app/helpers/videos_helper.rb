@@ -1,7 +1,11 @@
 module VideosHelper
 
   def duration(video)
-    Time.at(video.duration).gmtime.strftime('%M:%S').gsub(/\A00:/, "")
+    time = Time.at(video.duration).gmtime.strftime('%M:%S').to_s
+    if time.length > 5
+      time = time.gsub!(/\A00:/, "")
+    end
+    time
   end
 
   def youtube_player(video)

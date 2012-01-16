@@ -1,8 +1,15 @@
-.session
-  = link_to truncate(current_user.name, :length => 28, :omission => ''), "#", :rel => "popover",
-  :'data-placement' => "below", :class => "btn current-user" if current_user
-  = link_to "Connect an Account", "#", :rel => "popover", :'data-placement' => "below",
-  :'data-original-title' => "Connect an Account", :class => "btn" unless current_user
-
-  .popover-content.session
-    = render "shared/session"
+.btn-group.session
+  = link_to truncate(current_user.name, :length => 28, :omission => ''), user_path(current_user), :class => "btn current-user" if current_user
+  = link_to "Connect an Account", "#", :class => "btn" unless current_user
+  %a.btn.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+    %span.caret
+  %ul.dropdown-menu
+    %li
+      %a{:href => "#"} Action
+    %li
+      %a{:href => "#"} Another action
+    %li
+      %a{:href => "#"} Something else here
+    %li.divider
+    %li
+      %a{:href => "#"} Separated link

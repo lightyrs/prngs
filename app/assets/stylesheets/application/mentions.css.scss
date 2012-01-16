@@ -2,13 +2,15 @@ ul.media-list.mentions {
   padding-left: 8px;
 
   li.mention {
+    float: right;
+    clear: both;
     width: 188px;
     border: 1px solid #DDD;
     -webkit-border-radius: 4px;
     -moz-border-radius: 4px;
     border-radius: 4px;
     background: rgba(255, 255, 255, 0.75);
-    margin-bottom: 15px;
+    margin: 0 0 15px 0;
     z-index: 0;
     position: relative;
   
@@ -31,9 +33,13 @@ ul.media-list.mentions {
         padding: 9px 0 0;
         margin: 0 auto;
         width: 160px;
+        line-height: 16px;
+        color: gray;
 
         > .content {
           font-size: 12px;
+          text-overflow: ellipsis;
+          overflow: hidden;
         }
       }
 
