@@ -82,16 +82,23 @@
     }
   }
 
-  input.xlarge.span6 {
+  input.search-query {
     color: #080808;
-    font-weight: bold;
     position: relative;
     top: 1px;
     width: 322px;
     padding: 4px 8px;
+    line-height: 14px;
+    border-radius: 3px;
+   -moz-border-radius: 3px;
+   -webkit-border-radius: 3px;
 
     &.active {
       padding-bottom: 7px;
     }
+  }
+
+  .btn.primary {
+    padding: 5px 14px 6px;
   }
 }

@@ -1,4 +1,5 @@
 $.widget( "custom.catcomplete", $.ui.autocomplete, {
+
   _response: function( content ) {
     this._trigger( "complete" );
 		if ( !this.options.disabled && content && content.length ) {
@@ -60,9 +61,13 @@ $.widget( "custom.catcomplete", $.ui.autocomplete, {
 });
 
 $(document).ready(function(){
-  $('input[data-autocomplete]').live('focus', function(i){
-    $(this).catcomplete({
-      source: $(this).attr('data-autocomplete'),
+  (function() {
+    var $input = $('input[data-autocomplete]');
+    $input.catcomplete({
+      source: $input.attr('data-autocomplete'),
+      create: function() {
+        $input.focus();
+      },
       search: function() {
         $("#primary_search .loading").spin(Prngs.opts.spinner);
       },
@@ -71,14 +76,11 @@ $(document).ready(function(){
       },
       select: function(event, ui) {
         if (ui.item.hasOwnProperty('link')) {
-          $(this).parents("form").submit();
+          $input.parents("form").submit();
         }
       },
       html: true,
-      autoFocus: true,
       minLength: 2
     });
-  });
-
-  $("#primary_search input[data-autocomplete]").focus();
+  })();
 });

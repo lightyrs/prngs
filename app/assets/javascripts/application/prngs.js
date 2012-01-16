@@ -2,6 +2,7 @@ var Prngs = {
 
   init: function() {
     Prngs.pjax.init();
+    Prngs.polyfills.init();
   },
 
   appName: "prngs",
@@ -61,6 +62,22 @@ var Prngs = {
         }, 300);
         $(".pjax-loader").hide();
       }
+    }
+  },
+
+  polyfills: {
+
+    init: function() {
+      Prngs.polyfills.inputs();
+      Prngs.polyfills.text_overflow();
+    },
+
+    inputs: function() {
+      $.html5support();
+    },
+
+    text_overflow: function() {
+      $("[data-ellipsis]").ellipsis();
     }
   }
 }

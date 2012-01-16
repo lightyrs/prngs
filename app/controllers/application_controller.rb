@@ -4,7 +4,9 @@ class ApplicationController < ActionController::Base
   helper_method :current_user
 
   before_filter :suggested
+  before_filter :mentions
   before_filter :body_class
+
   after_filter :set_pjax_headers
 
   private
@@ -27,5 +29,9 @@ class ApplicationController < ActionController::Base
       :artists => Artist.select([:id, :name, :popularity]).includes([:videos]).top(5),
       :users => User.select([:id, :name]).includes([:videos]).first(5)
     })
+  end
+
+  def mentions
+    @mentions = Mention.from_last(1.day).where{text.length > 5 && video_id != nil}.includes([:video]).random(3).uniq
   end
 end

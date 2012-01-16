@@ -34,10 +34,9 @@ class Artist < ActiveRecord::Base
   end
 
   def self.construct(artist)
-    artist = Artist.find_or_create_by_name(
-               :name => artist.name,
-               :echonest_id => artist.id
-             )
-    BeanCounter.rank(artist)
+    Artist.find_or_create_by_name(
+      :name => artist.name,
+      :echonest_id => artist.id
+    )
   end
 end
