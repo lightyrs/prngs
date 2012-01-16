@@ -37,6 +37,8 @@ body > .popover {
     background-repeat: no-repeat;
     background-color: transparent;
     background-position: 0 0;
+    margin: 6px 10px 2px;
+    padding: 0;
 
     &:hover {
       background-position: 0 -24px;
@@ -51,7 +53,6 @@ body > .popover {
     }
 
     &.twitter {
-      margin-bottom: 7px;
       background-image: image_url('/assets/buttons/login_twitter.png');
     }
   }
@@ -67,6 +68,11 @@ body > .popover {
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
     border: 1px solid white;
     overflow: hidden;
+    
+    a {
+      padding: 0;
+      clear: none;
+    }
 
     &:hover {
       border: 1px solid #0069D6;
@@ -99,6 +105,9 @@ body > .popover {
     font-weight: bold;
     
     a {
+      padding: 0;
+      clear: none;
+
       &:hover {
         text-decoration: none;
       }

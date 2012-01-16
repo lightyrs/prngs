@@ -2,3 +2,4 @@
   = render :collection => @popular_today, :as => :video, :partial => "videos/thumb"
 
   = paginate @popular_today, :id => "pagination"
+  = page_entries_info @popular_today

@@ -316,6 +316,11 @@ button.btn::-moz-focus-inner, input[type=submit].btn::-moz-focus-inner {
   -moz-background-clip: padding;
   background-clip: padding-box;
   zoom: 1;
+
+  &.session {
+    width: 200px;
+    right: 0;
+  }
 }
 .dropdown-menu .divider {
   height: 1px;
@@ -323,6 +328,7 @@ button.btn::-moz-focus-inner, input[type=submit].btn::-moz-focus-inner {
   overflow: hidden;
   background-color: #e5e5e5;
   border-bottom: 1px solid #ffffff;
+  border-top: 3px solid white;
 }
 .dropdown-menu a {
   display: block;

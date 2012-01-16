@@ -3,13 +3,16 @@
   = link_to "Connect an Account", "#", :class => "btn" unless current_user
   %a.btn.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
     %span.caret
-  %ul.dropdown-menu
-    %li
-      %a{:href => "#"} Action
-    %li
-      %a{:href => "#"} Another action
-    %li
-      %a{:href => "#"} Something else here
-    %li.divider
-    %li
-      %a{:href => "#"} Separated link
+  %ul.dropdown-menu.session
+    - if current_user
+      %li.heading
+        .avatar= user_avatar(current_user)
+        .current-user= link_to current_user.name, user_path(current_user)
+      .authentications
+        .twitter= connection_status("twitter", current_user)
+        .facebook= connection_status("facebook", current_user)
+      %li.divider
+      %li= link_to "Log Out", logout_path
+    - else
+      %li= link_to "Log In with Twitter", "/auth/twitter", :class => "button twitter login", :'data-skip-pjax' => true
+      %li= link_to "Log In with Facebook", "/auth/facebook", :class => "button facebook login", :'data-skip-pjax' => true
