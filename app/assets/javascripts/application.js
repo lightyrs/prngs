@@ -23,4 +23,3 @@
 //
 //= require application/prngs
 //= require application/popover
-//= require application/flash

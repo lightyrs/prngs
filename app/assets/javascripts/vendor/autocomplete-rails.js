@@ -62,17 +62,21 @@ $.widget( "custom.catcomplete", $.ui.autocomplete, {
 
 $(document).ready(function(){
   (function() {
-    var $input = $('input[data-autocomplete]');
+    var $input = $('input[data-autocomplete]'),
+        $primarySearch = $("#primary_search");
+
     $input.catcomplete({
       source: $input.attr('data-autocomplete'),
       create: function() {
         $input.focus();
       },
       search: function() {
-        $("#primary_search .loading").spin(Prngs.opts.spinner);
+        $primarySearch.find(".loading").spin(Prngs.opts.spinner)
+          .end().find(".btn.primary").button('loading');
       },
       complete: function() {
-        $("#primary_search .loading").spin(false);
+        $primarySearch.find(".loading").spin(false)
+          .end().find(".btn.primary").button('reset');
       },
       select: function(event, ui) {
         if (ui.item.hasOwnProperty('link')) {

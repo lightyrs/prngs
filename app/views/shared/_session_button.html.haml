@@ -7,12 +7,16 @@
     - if current_user
       %li.heading
         .avatar= user_avatar(current_user)
-        .current-user= link_to current_user.name, user_path(current_user)
       .authentications
+        %strong Connections
         .twitter= connection_status("twitter", current_user)
         .facebook= connection_status("facebook", current_user)
       %li.divider
-      %li= link_to "Log Out", logout_path
+      %li.action= link_to "My Profile", user_path(current_user)
+      %li.action= link_to "Account Settings", "#"
+      %li.action= link_to "Help Center", "#"
+      %li.divider
+      %li.action.logout= link_to "Log Out", logout_path
     - else
-      %li= link_to "Log In with Twitter", "/auth/twitter", :class => "button twitter login", :'data-skip-pjax' => true
-      %li= link_to "Log In with Facebook", "/auth/facebook", :class => "button facebook login", :'data-skip-pjax' => true
+      %li.action= link_to "Log In with Twitter", "/auth/twitter", :class => "button twitter login", :'data-skip-pjax' => true
+      %li.action= link_to "Log In with Facebook", "/auth/facebook", :class => "button facebook login", :'data-skip-pjax' => true

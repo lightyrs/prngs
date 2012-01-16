@@ -318,8 +318,9 @@ button.btn::-moz-focus-inner, input[type=submit].btn::-moz-focus-inner {
   zoom: 1;
 
   &.session {
-    width: 200px;
     right: 0;
+    min-width: 180px;
+    max-width: 300px;
   }
 }
 .dropdown-menu .divider {

@@ -13,18 +13,46 @@ body > .popover {
 
 .session {
 
-  &.popover-content {
+  &.btn-group {
 
-    .button.login {
-      margin: 0 auto;
+    .avatar {
+      margin: 5px 10px 0;
     }
 
-    .current-user {
-      display: none;
+    .authentications {
+      width: auto;
+      line-height: 16px;
+      font-size: 12px;
+      margin: 6px 0 11px;
+
+      strong {
+        padding-bottom: 5px;
+        display: block;
+      }
     }
 
-    .logout {
-      display: block;
+    .dropdown-menu {
+      
+      li.divider {
+        border-top: 1px solid white;
+      }
+      
+      li.action {
+
+        a {
+          font-size: 12px; 
+          font-weight: bold;
+          padding: 2px 11px;
+        }
+        
+        &.logout {
+          display: block;
+        
+          a {
+            font-weight: normal;
+          }
+        }
+      }
     }
   }
 
