@@ -87,6 +87,10 @@ body {
           -moz-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
           box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
 
+          &.session {
+            padding-bottom: 15px;
+          }
+
           h5 {
             font-size: 14px;
             line-height: 36px;
