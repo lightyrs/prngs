@@ -38,7 +38,7 @@ class Source < ActiveRecord::Base
       order_by :created_at, :desc
       order_by :popularity, :desc
       order_by :mentions, :desc
-      paginate :per_page => 20
+      paginate :per_page => 10
     end
   end
 

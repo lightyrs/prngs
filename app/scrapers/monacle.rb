@@ -141,4 +141,26 @@ module Monacle
       text
     end
   end
+
+
+  module Artists
+
+    def self.squint(artist)
+      begin
+        images = LastFM::Artist.get_images(:artist => artist.name)["images"]["image"]
+        square_images = []
+        images.each do |image|
+          squares = image["sizes"]["size"].reject do |size|
+            size["name"] != "largesquare"
+          end
+          square_images.push squares
+        end
+        artist.images = square_images.flatten
+        artist.save
+        puts artist.images
+      rescue
+      end
+      sleep 1.second
+    end
+  end
 end

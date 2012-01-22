@@ -71,12 +71,10 @@ $(document).ready(function(){
         $input.focus();
       },
       search: function() {
-        $primarySearch.find(".loading").spin(Prngs.opts.spinner)
-          .end().find(".btn.primary").button('loading');
+        $primarySearch.find(".loading").spin(Prngs.opts.spinner);
       },
       complete: function() {
-        $primarySearch.find(".loading").spin(false)
-          .end().find(".btn.primary").button('reset');
+        $primarySearch.find(".loading").spin(false);
       },
       select: function(event, ui) {
         if (ui.item.hasOwnProperty('link')) {

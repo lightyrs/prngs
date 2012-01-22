@@ -38,7 +38,7 @@ class Video < ActiveRecord::Base
       fulltext query
       order_by :created_at, :desc
       order_by :popularity, :desc
-      paginate :per_page => 20
+      paginate :per_page => 10
     end
   end
 

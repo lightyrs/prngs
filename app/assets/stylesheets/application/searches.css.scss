@@ -1,0 +1,42 @@
+body.searches {
+
+  .page-heading {
+    margin: 0;
+    width: 517px;
+    overflow: hidden;
+
+    .counts {
+      float: left;
+      font-size: 14px;
+
+      .count {
+        @include inline-block;
+      }
+    }
+  }
+
+  .main {
+
+    .page-heading {
+      padding-bottom: 15px;
+      margin-bottom: 7px;
+      border-bottom: 1px solid #DDD;
+      -webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+      -moz-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+      box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+    }
+
+    .module {
+      padding-bottom: 15px;
+      margin-bottom: 10px;
+      border-bottom: 1px solid #DDD;
+      -webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+      -moz-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+      box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+
+      h3 {
+        padding-bottom: 8px;
+      }
+    }
+  }
+}

@@ -51,6 +51,19 @@ ul.media-list {
   &.popular.today {
     width: 518px;
     float: left;
+
+    li {
+      line-height: 1;
+    }
+  }
+
+  &.search {
+    width: 518px;
+    float: left;
+
+    li {
+      line-height: 1;
+    }
   }
 
   &.mentions {
@@ -75,6 +88,25 @@ ul.media-list {
     padding-bottom: 6px;
     position: relative;
 
+    &.artist {
+      padding-bottom: 10px;
+
+      .meta {
+        width: 358px;
+        max-width: none;
+
+        h3 {
+          font-size: 20px;
+          line-height: 20px;
+          padding: 0 0 10px;
+        }
+
+        .bio {
+          line-height: 16px;
+        }
+      }
+    }
+
     .loading {
       position: absolute;
       top: 35px;
@@ -88,6 +120,23 @@ ul.media-list {
       overflow: hidden;
       width: 168px;
       height: 95px;
+
+      &.largesquare {
+        width: 137px;
+        height: 137px;
+        
+        a.thumbnail {
+          width: 132px;
+          height: 132px;
+
+          img {
+            width: 126px;
+            height: 126px;
+            top: 0;
+            left: 0;
+          }
+        }
+      }
 
       &:hover, &:active {
 
@@ -121,7 +170,7 @@ ul.media-list {
         border: 3px solid rgba(255, 255, 255, 0.8);
         box-sizing: border-box;
        *behavior: url(/assets/polyfills/boxsizing.htc);
-  
+
         img {
           width: 163px;
           max-width: none;

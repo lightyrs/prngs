@@ -105,6 +105,7 @@ module Lasso
         artist_group.flatten.each do |artist|
           begin
             Echonest.profile(artist)
+            Monacle::Artists.squint(artist)
             puts "#{artist.name}".green
           rescue StandardError => ex
             puts "#{ex.message}".red

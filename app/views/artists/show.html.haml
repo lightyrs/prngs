@@ -1,4 +1,6 @@
-= render @artist
+.artist-image= image_tag @artist.image, :alt => @artist.name
+
+%h1= @artist.name
 
 = render "mentions/mentions"
 

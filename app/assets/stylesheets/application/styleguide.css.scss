@@ -126,8 +126,11 @@ body {
       .main {
         width: 730px;
 
-        h1 {
-          float: left;
+        .page-heading {
+
+          h1 {
+            float: left;
+          }
         }
       }
     }

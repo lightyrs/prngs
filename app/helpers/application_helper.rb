@@ -26,4 +26,8 @@ module ApplicationHelper
   def content_for_or_pjax(name, &block)
     request.headers['X-PJAX'] ? capture(&block) : content_for(name, &block)
   end
+
+  def pluralize_without_count(count, noun, text = nil)
+    count == 1 ? "#{noun}#{text}" : "#{noun.pluralize}#{text}"
+  end
 end

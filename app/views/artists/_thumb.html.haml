@@ -4,6 +4,5 @@
       = image_tag(artist.image, :alt => artist.name)
   .meta
     %h3= link_to artist.name, artist_path(artist)
-    .bio= artist.bio
+    .bio= truncate(artist.bio, :length => 217)
   .loading
-

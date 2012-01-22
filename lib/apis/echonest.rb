@@ -29,7 +29,6 @@ module Echonest
       artist.update_attributes(
         :popularity => response.hotttnesss,
         :familiarity => response.familiarity,
-        :images => response.images,
         :biographies => response.biographies
       )
     end
