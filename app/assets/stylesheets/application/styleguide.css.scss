@@ -15,12 +15,7 @@ body {
     }
 
     > .content {
-      padding-bottom: 14px;
-      margin-bottom: 7px;
-      border-bottom: 1px solid #DDD;
-      -webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
-      -moz-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
-      box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+      @include twopxborder;
 
       > .row.body {
         clear: both;
@@ -28,12 +23,10 @@ body {
       }
 
       .page-header {
+        @include twopxborder;
         height: 65px;
         margin-bottom: 17px;
-        border-bottom: 1px solid #DDD;
-        -webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
-        -moz-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
-        box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+        padding-bottom: 0;
 
         h1 {
           float: left;
@@ -80,15 +73,10 @@ body {
         width: 220px;
 
         .module {
-          padding-bottom: 15px;
-          margin-bottom: 7px;
-          border-bottom: 1px solid #DDD;
-          -webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
-          -moz-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
-          box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+          @include twopxborder;
 
-          &.session {
-            padding-bottom: 15px;
+          &.session.logged-out {
+            padding-bottom: 7px;
           }
 
           h5 {
@@ -127,6 +115,8 @@ body {
         width: 730px;
 
         .page-heading {
+          width: 517px;
+          float: left;
 
           h1 {
             float: left;

@@ -1,6 +1,6 @@
-.artist-image= image_tag @artist.image, :alt => @artist.name
-
-%h1= @artist.name
+= content_for_or_pjax :heading do
+  %h1= @artist.name
+  .artist-image= image_tag @artist.image, :alt => @artist.name
 
 = render "mentions/mentions"
 

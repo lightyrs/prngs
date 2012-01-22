@@ -15,7 +15,7 @@
       %li.action= link_to "Account Settings", "#"
       %li.action= link_to "Help Center", "#"
       %li.divider
-      %li.action.logout= link_to "Log Out", logout_path
+      %li.action.logout= link_to "Log Out", logout_path, :'data-skip-pjax' => true
     - else
       %li.action.login= link_to "Log In with Twitter", "/auth/twitter", :class => "button twitter login", :'data-skip-pjax' => true
       %li.action.login= link_to "Log In with Facebook", "/auth/facebook", :class => "button facebook login", :'data-skip-pjax' => true
