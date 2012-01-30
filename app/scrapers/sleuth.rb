@@ -91,4 +91,111 @@ module Sleuth
       end
     end
   end
+
+
+  module Tweets
+
+    YAML_FILE = YAML::load(File.open("#{Rails.root}/config/twitter_lists.yml"))
+
+    def self.lists
+      YAML_FILE
+    end
+
+    def self.write_yaml
+
+      File.open("#{Rails.root}/config/twitter_lists.yml", 'w') do |file|
+        file.write(lists.to_yaml)
+      end
+    end
+
+    def self.discover
+      i = 0
+      timelines = []
+      lists_count = lists.count
+      lists.each do |listname, values|
+        i += 1
+        begin
+          username = values["user"]
+          listname = listname.to_s
+          since_id = values["since_id"]
+          timelines = timelines | list_timeline(username, listname, since_id)
+        rescue
+          timelines
+        end
+      end
+
+      if i == lists_count
+        write_yaml
+      end
+
+      timelines.compact.flatten
+      #harvest(timelines.compact.flatten)
+    end
+
+    def self.harvest(grains)
+      grains.each do |hash|
+        if hash.keys == "mention"
+
+        elsif hash.keys == "video"
+          Video.construct(hash["video"])
+        end
+      end
+    end
+
+    def self.list_timeline(username, listname, since_id)
+      list = Twitter.list_timeline(username, listname, :include_entities => true, :per_page => 500, :since_id => since_id)
+
+      list.collect do |status|
+        if status == list.last
+          lists[listname]["since_id"] = status.id
+        end
+
+        if status.text.match(/\b(vid\w*)|\b(watch\w*)|mp4/i)
+          filter(status) || nil
+        end
+      end
+    end
+
+    def self.filter(status)
+      expanded_url = status.attrs["entities"]["urls"].pop["expanded_url"] rescue ""
+      video = VideoInfo.new(expanded_url, "User-Agent" => user_agent) rescue nil
+
+      if video && video.valid?
+        # Create the video and mention
+      elsif expanded_url.length > 0
+        # Scrape the url for a video.
+        # If one is found, create the video and mention.
+      end
+
+      # TODO: If no video or not video.valid?, scrape the url for a video.
+      # If you find one create the mention and the video. 
+
+      # screen_name = status.attrs["user"]["screen_name"].downcase
+      # id_str = status.attrs["id_str"]
+
+      # mention = Mention.create(
+      #   :title => status.text,
+      #   :url => "http://twitter.com/#!/#{screen_name}/status/#{id_str}",
+      #   :date => status.created_at,
+      #   :source_id => Source.find_or_create_by_name(
+      #     :name => screen_name,
+      #     :url => "http://twitter.com/#!/#{screen_name}",
+      #     :kind => "Twitter"
+      #   ).id
+      # )
+      
+      # puts status.inspect
+      # puts mention.inspect
+
+      if video && video.valid?
+        {"video" => video}
+      else
+        {"mention" => expanded_url}
+      end
+    end
+
+    def self.user_agent
+      "Mozilla/5.0 (Windows; U; Windows NT 5.0; en-US; rv:1.4b) Gecko/20030516 Mozilla Firebird/0.6"
+    end
+  end
 end

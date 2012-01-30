@@ -31,7 +31,7 @@ class Artist < ActiveRecord::Base
     images.length > 0 ? images.first["#text"] : ""
   end
 
-  def self.default_search(query)
+  def self.primary_search(query)
     Artist.solr_search do
       fulltext query
       order_by :created_at, :desc

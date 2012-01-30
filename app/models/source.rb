@@ -32,7 +32,7 @@ class Source < ActiveRecord::Base
     Source.all.delete_if{|s| s.relevance == 0}.sort_by(&:relevance).reverse
   end
 
-  def self.default_search(query)
+  def self.primary_search(query)
     Source.solr_search do
       fulltext query
       order_by :created_at, :desc

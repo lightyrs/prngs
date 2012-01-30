@@ -33,7 +33,7 @@ class Video < ActiveRecord::Base
     mentions.map(&:source).sort_by(&:popularity)
   end
 
-  def self.default_search(query)
+  def self.primary_search(query)
     Video.solr_search do
       fulltext query
       order_by :created_at, :desc

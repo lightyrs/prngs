@@ -6,10 +6,11 @@ namespace :hourly do
     Rails.application.eager_load!
   end
 
-  desc "Discover video mentions from feeds"
+  desc "Discover video mentions from feeds and tweets"
   task :discover_video_mentions, [:scope] => :begin do |t,args|
-    puts "\nLasso::Feeds.wrangle\n\n"
+    puts "\nLasso::Feeds.wrangle\nSleuth::Tweets.discover\n\n"
     Lasso::Feeds.wrangle
+    Sleuth::Tweets.discover
   end
 
   desc "Extract videos from recently created mentions"

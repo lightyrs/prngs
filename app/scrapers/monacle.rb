@@ -42,7 +42,7 @@ module Monacle
         candidates.push iframe.attributes["src"]
       end
       candidates.delete_if do |url|
-        url.nil? || url.match(/youtube|vimeo/).nil?
+        url.nil? || url.match(/youtu|vimeo/).nil?
       end
     end
 
