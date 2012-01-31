@@ -15,6 +15,6 @@ namespace :daily do
   desc "Set timestamp"
   task :init, [:scope] => :discover_video_popularity do |t,args|
     puts "\nEND: #{Time.now}\n\n"
-    Process.exit!(true)
+    Process::abort
   end
 end

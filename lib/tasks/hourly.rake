@@ -6,15 +6,20 @@ namespace :hourly do
     Rails.application.eager_load!
   end
 
-  desc "Discover video mentions from feeds and tweets"
+  desc "Discover video mentions from feeds"
   task :discover_video_mentions, [:scope] => :begin do |t,args|
-    puts "\nLasso::Feeds.wrangle\nSleuth::Tweets.discover\n\n"
+    puts "\nLasso::Feeds.wrangle\n\n"
     Lasso::Feeds.wrangle
+  end
+
+  desc "Discover videos and video mentions from tweets"
+  task :sleuth_tweets, [:scope] => :discover_video_mentions do |t,args|
+    puts "\nSleuth::Tweets.discover\n\n"
     Sleuth::Tweets.discover
   end
 
   desc "Extract videos from recently created mentions"
-  task :lasso_recent, [:scope] => :discover_video_mentions do |t,args|
+  task :lasso_recent, [:scope] => :sleuth_tweets do |t,args|
     puts "\nLasso::Mentions.wrangle(Mention.from_last 1.hour)\n\n"
     Lasso::Mentions.wrangle(Mention.from_last 1.hour)
   end
@@ -34,6 +39,6 @@ namespace :hourly do
   desc "Set timestamp"
   task :init, [:scope] => :lasso_artists do |t,args|
     puts "\nEND: #{Time.now}\n\n"
-    Process.exit!(true)
+    Process::abort
   end
 end

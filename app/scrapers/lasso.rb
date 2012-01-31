@@ -7,7 +7,7 @@ module Lasso
     def self.wrangle
       feeds = []
       Source.all.each do |source|
-        feeds = source.feeds | feeds
+        feeds = (source.feeds || []) | feeds
       end
       if collate Feedzirra::Feed.fetch_and_parse(feeds)
         puts "Success!".green

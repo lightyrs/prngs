@@ -14,6 +14,6 @@ namespace :monthly do
   desc "Set timestamp"
   task :init, [:scope] => :discover_video_mentions do |t,args|
     Rails.logger.debug("END: #{Time.now}")
-    Process.exit!(true)
+    Process::abort
   end
 end
