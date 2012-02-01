@@ -1,7 +1,7 @@
 set :output, nil
 
-# Hourly Cron
-every :hour do
+# 2-Hourly Cron
+every 2.hours do
   rake "hourly:init"
 end
 

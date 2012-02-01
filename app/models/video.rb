@@ -18,9 +18,6 @@ class Video < ActiveRecord::Base
   scope :popular_from_source, lambda { |source, age|
     Video.joins{mentions.source}.where{mentions.source_id == source.id}.popular_from_last(age)
   }
-  scope :popular_from_author, lambda { |author, age|
-    Video.joins{mentions.authors}.where{mentions.authors.id == author.id}.popular_from_last(age)
-  }
 
   searchable do
     text    :title
@@ -60,5 +57,6 @@ class Video < ActiveRecord::Base
     mention.video_id = video.id
     mention.save
     BeanCounter.rank(video)
+    video
   end
 end

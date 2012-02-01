@@ -15,8 +15,6 @@ Prngs::Application.routes.draw do
 
   resources :users
 
-  resources :authors
-
   resources :sources
 
   resources :mentions

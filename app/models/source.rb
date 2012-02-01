@@ -43,11 +43,16 @@ class Source < ActiveRecord::Base
   end
 
   def self.construct(name, url, kind)
-    source = Source.find_or_create_by_name(
-               :name => name,
-               :url => url,
-               :kind => kind
-             )
-    BeanCounter.rank(source)
+    if source = Source.find_by_name(name)
+      source
+    else
+      source = Source.create(
+                 :name => name,
+                 :url => url,
+                 :kind => kind
+               )
+      BeanCounter.rank(source)
+      source
+    end
   end
 end

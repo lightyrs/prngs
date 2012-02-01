@@ -7,19 +7,19 @@ namespace :hourly do
   end
 
   desc "Discover video mentions from feeds"
-  task :discover_video_mentions, [:scope] => :begin do |t,args|
+  task :discover_mentions_from_feeds, [:scope] => :begin do |t,args|
     puts "\nLasso::Feeds.wrangle\n\n"
     Lasso::Feeds.wrangle
   end
 
   desc "Discover videos and video mentions from tweets"
-  task :sleuth_tweets, [:scope] => :discover_video_mentions do |t,args|
-    puts "\nSleuth::Tweets.discover\n\n"
-    Sleuth::Tweets.discover
+  task :discover_mentions_from_tweets, [:scope] => :discover_mentions_from_feeds do |t,args|
+    puts "\nLasso::Tweets.wrangle\n\n"
+    Lasso::Tweets.wrangle
   end
 
   desc "Extract videos from recently created mentions"
-  task :lasso_recent, [:scope] => :sleuth_tweets do |t,args|
+  task :lasso_recent, [:scope] => :discover_mentions_from_tweets do |t,args|
     puts "\nLasso::Mentions.wrangle(Mention.from_last 1.hour)\n\n"
     Lasso::Mentions.wrangle(Mention.from_last 1.hour)
   end

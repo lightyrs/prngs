@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120105001512) do
+ActiveRecord::Schema.define(:version => 20120201013437) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.integer  "resource_id",   :null => false
@@ -73,21 +73,6 @@ ActiveRecord::Schema.define(:version => 20120105001512) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
-
-  create_table "authors", :force => true do |t|
-    t.string   "name"
-    t.string   "url"
-    t.string   "kind"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "authors_mentions", :id => false, :force => true do |t|
-    t.integer "author_id"
-    t.integer "mention_id"
-  end
-
-  add_index "authors_mentions", ["author_id", "mention_id"], :name => "index_authors_mentions_on_author_id_and_mention_id"
 
   create_table "mentions", :force => true do |t|
     t.integer  "source_id"

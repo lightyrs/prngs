@@ -6,6 +6,7 @@
         %span.duration= duration(mention.video)
     .caption
       %h5= Sanitize.clean(mention.title).html_safe
-      .content{:'data-ellipsis' => true}= clean_content(mention.text)
+      - unless mention.source.kind == "Twitter"
+        .content{:'data-ellipsis' => true}= clean_content(mention.text)
     %p.buttons
       = link_to "Watch Video", video_path(mention.video), :class => "btn primary"
