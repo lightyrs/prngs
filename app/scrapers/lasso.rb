@@ -9,13 +9,10 @@ module Lasso
         begin
           puts "#{source.name}".green
           source.feeds.each do |feed|
-            updated_feed = Feedzirra::Feed.update(feed)
-            if updated_feed.updated?
-              Feedzirra::Feed.fetch_and_parse(updated_feed, :timeout => 20,
-                                                            :if_modified_since => Time.now - 24.hours,
-                                                            :on_success => lambda {|url, feed| dispatch(source, feed.entries) }
-              )
-            end
+            Feedzirra::Feed.fetch_and_parse(feed, :timeout => 20,
+                                                          :if_modified_since => Time.now - 24.hours,
+                                                          :on_success => lambda {|url, feed| dispatch(source, feed.entries) }
+            )
           end
         rescue StandardError => e
           puts "#{e}".red
