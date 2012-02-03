@@ -9,6 +9,8 @@ class Video < ActiveRecord::Base
   validates_uniqueness_of :video_id
   validates_uniqueness_of :title
 
+  validates :title, :length => { :maximum => 200 }
+
   include NamedScopes::DateTime
   include NamedScopes::Popularity
 
